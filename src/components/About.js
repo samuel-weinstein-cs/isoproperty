@@ -3,9 +3,9 @@ import React from "react";
 function About() {
   return (
     <div>
-      <h1>About our company</h1>
-      <p>
-        ISO Property's approach to business is unique. It\'s not just about
+      <h1 className="about-header">About our company</h1>
+      <p className="about-p">
+        ISO Property's approach to business is unique. It's not just about
         buying or selling real estate; it is about trust, it is about the way we
         conduct our business that makes us different from our competitors and
         makes our customers return to us again and again. We are committed to

@@ -9,5 +9,52 @@
 .nav-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.iso-box {
+  color: white;
+  background-color: #16A699;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.web-name {
+  margin-right: 40%;
+}
+
+.header-link, a {
+  text-decoration: none;
+  color: #16A699;
+  margin-left: 10%;
+}
+
+.header-link, a:hover {
+  color: grey;
+}
+
+.nav-list {
+  margin-right: 30%;
+}
+
+.about-p {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.about-header {
+  letter-spacing: 5px;
+}
+
+.contact p {
+  font-size: 10px;
+}
+
+.home-p {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.home-header {
+  color: #16A699;
 }

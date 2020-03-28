@@ -2,8 +2,7 @@ import React from 'react';
 
 function Footer() {
     return(
-        <div>
-        <h1>Contact</h1>
+        <div className="contact">
         <p>Licensed Real Estate Broker</p>
         <p>iso property corp</p>
         <p>New York, New York</p>
