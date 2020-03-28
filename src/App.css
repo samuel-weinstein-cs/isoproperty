@@ -48,6 +48,9 @@
 
 .contact p {
   font-size: 10px;
+  text-align: left;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .home-p {
@@ -57,4 +60,12 @@
 
 .home-header {
   color: #16A699;
+}
+
+.about p {
+  text-align: left;
+}
+
+.license {
+  color: rgb(50, 50, 50)
 }

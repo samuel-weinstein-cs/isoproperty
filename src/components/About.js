@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div>
+    <div className="about">
       <h1 className="about-header">About our company</h1>
       <p className="about-p">
         ISO Property's approach to business is unique. It's not just about
@@ -11,13 +11,19 @@ function About() {
         makes our customers return to us again and again. We are committed to
         providing you with a personal and professional service, underpinned by a
         committed approach to getting the job done with honesty and integrity.
+      </p>
+
+      <p className="about-p">
         Buying or selling your home is one of the most financially important
         decisions you will ever encounter. We strive to alleviate any
         uncertainties and concerns you have during the process. Please feel free
-        to contact us to discuss your real estate needs. Broker cooperation
-        always welcomed. Member of the National Association of REALTORS Member
-        of New York State Association of REALTORS Member of the Hudson Gateway
-        Association of REALTORS
+        to contact us to discuss your real estate needs.
+      </p>
+      <p className="about-p">Broker cooperation always welcomed.</p>
+      <p className="about-p">
+        Member of the National Association of REALTORS<br></br> Member of New
+        York State Association of REALTORS<br></br>Member of the Hudson
+        GatewayAssociation of REALTORS
       </p>
     </div>
   );
