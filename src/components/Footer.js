@@ -7,8 +7,9 @@ function Footer() {
         <b>iso property corp</b><br></br>
         New York, New York<br></br>
         Phone 212.252.2704 (7days/week)<br></br>
-        contact@isoproperty.com<br></br>
-        copyright© 2004-2006 iso property corp All rights reserved</p>
+        <b className="email">contact@isoproperty.com</b><br></br></p>
+        <div className="upper-contact"></div>
+        <p>copyright© 2004-2006 iso property corp All rights reserved</p>
         </div>
     )
 }

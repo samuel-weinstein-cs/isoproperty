@@ -9,13 +9,13 @@ function Header() {
       <nav className="header-nav">
         <ul className="nav-list">
           <li className="header-link">
-            <Link to="/">Home</Link>
+            <Link to="/"><b>Home</b></Link>
           </li>
+          {/* <li className="header-link">
+            <Link to="/"><b>Listings</b></Link>
+          </li> */}
           <li className="header-link">
-            <Link to="/">Listings </Link>
-          </li>
-          <li className="header-link">
-            <Link to="/about">About</Link>
+            <Link to="/about"><b>About</b></Link>
           </li>
         </ul>
         <main>
