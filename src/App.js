@@ -11,8 +11,10 @@ class App extends Component {
   }
   render() {
     return <div className="App">
+      <div className="content">
       <h1 className="web-name"><span className="iso-box">iso</span> property corp</h1>
       <Header/>
+      </div>
       <Footer/>
     </div>;
   }
