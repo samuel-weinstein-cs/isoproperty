@@ -13,6 +13,7 @@ function Home() {
       aim is to provide a professional one-on-one service from the initial
       meeting through closing.</b>
     </p>
+    <img className="home-img" src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg" alt="city view"/>
   </div>
     )
 }

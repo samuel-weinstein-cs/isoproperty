@@ -24,6 +24,7 @@ class Listings extends Component {
                         <p>{listing.address}</p>
                         <p>{listing.address2}</p>
                         <p>{listing.state}</p>
+                        <p>{listing.city}</p>
                         <p>{listing.zip}</p>
                         <p>{listing.price}</p>
                         <p>{listing.rental}</p>
@@ -31,7 +32,6 @@ class Listings extends Component {
                         <p>{listing.bedrooms}</p>
                         <p>{listing.neighborhood}</p>
                         <p>{listing.description}</p>
-                        <p>{listing.city}</p>
                     </div>
                 })}
             </div>
