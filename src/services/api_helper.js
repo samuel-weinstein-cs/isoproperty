@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: "https://localhost:3001"
+    baseURL: "http://localhost:3001/"
 })
 
-export const showListings = async () => {
+export const getListings = async () => {
     const resp = await api.get('/listings');
     return resp.data;
   }

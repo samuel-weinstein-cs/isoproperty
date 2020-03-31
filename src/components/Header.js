@@ -1,7 +1,5 @@
 import React from "react";
-import {Link, Route} from 'react-router-dom';
-import About from "./About.js";
-import Home from "./Home.js";
+import {Link} from 'react-router-dom';
 
 function Header() {
   return (
@@ -11,18 +9,13 @@ function Header() {
           <li className="header-link">
             <Link to="/"><b>Home</b></Link>
           </li>
-          {/* <li className="header-link">
-            <Link to="/"><b>Listings</b></Link>
-          </li> */}
+          <li className="header-link">
+            <Link to="/listings"><b>Listings</b></Link>
+          </li>
           <li className="header-link">
             <Link to="/about"><b>About</b></Link>
           </li>
         </ul>
-        <main>
-          <Route exact path="/" render={() => <Home />}></Route>
-          {/* <Route path="/listings" render={() => <Listings />}></Route> */}
-          <Route path="/about" render={() => <About />}></Route>
-        </main>
       </nav>
     </div>
   );

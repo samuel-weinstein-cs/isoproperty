@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
+import {getListings} from '../services/api_helper';
 
 class Listings extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            listings = []
+            listings: []
         }
     }
 
     componentDidMount = async () => {
-        const listings = await showListings();
+        const listings = await getListings();
         this.setState({
           listings
         })
@@ -19,7 +20,7 @@ class Listings extends Component {
     render() {
         return(
             <div>
-                {this.state.listings.map((listing, index) => {
+                {this.state.listings.map((listing, index) => (
                     <div key={index}>
                         <p>{listing.address}</p>
                         <p>{listing.address2}</p>
@@ -33,7 +34,7 @@ class Listings extends Component {
                         <p>{listing.neighborhood}</p>
                         <p>{listing.description}</p>
                     </div>
-                })}
+                ))}
             </div>
         )
     }
