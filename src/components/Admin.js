@@ -5,14 +5,21 @@ class Admin extends Component {
         super(props);
 
         this.state = {
-            currentUser: null
+            currentUser: null,
+            loggedIn: false
         }
+    }
+
+    loginSubmit = () => {
+        this.setState({
+            loggedIn: true
+        })
     }
 
     render() {
         return(
             <div>
-                <form>
+                <form className="admin-login">
                     <input
                     className="username-input"
                     autoComplete="off"
@@ -34,7 +41,7 @@ class Admin extends Component {
                     onChange={this.handleChange}
                     />
                     <br />
-                    <button className="submit">Submit</button>
+                    <button className="submit">Login</button>
                     <br />
                 </form>
             </div>

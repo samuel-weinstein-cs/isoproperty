@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: 15%;
 }
 
 .iso-box {
@@ -123,4 +124,72 @@ a:hover {
 
 .home-img {
   height: 50vh;
+}
+
+.admin-login {
+  margin-top: 50px;
+}
+
+.listing p {
+  display: flex;
+  font-size: 15px;
+}
+
+.listing {
+  border-top: solid #009999 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.click-img {
+  position: relative;
+  top: 10px;
+  left: 18%;
+}
+
+.sales {
+  position: relative;
+  right: 17.8%;
+  top: 20px;
+  color: grey;
+}
+
+.listing-title {
+  width: 600px;
+  color: #009999;
+  font-size: 20px !important;
+  padding: 0;
+  line-height: 0;
+}
+
+.listing-flex-container {
+  display: flex;
+  flex-direction: row;
+  /* position: relative; */
+  margin-bottom: 40%;
+}
+
+.listing-flex-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-flex-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+}
+
+.address-img {
+  height: 200px;
+  width: 250px;
+  position: relative;
+  left: 40%;
+  bottom: 30px;
 }
