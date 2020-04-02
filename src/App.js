@@ -29,11 +29,11 @@ class App extends Component {
           <main>
             <Switch>
               <Route path="/admin" component={Admin} />
+              <Route path="/listings/:id">
+                <SingleListing />
+              </Route>
               <Route path="/listings">
-              {/* <Route path="/listings/:id"> */}
                 <Listings />
-                  {/* <SingleListing /> */}
-                {/* </Route> */}
               </Route>
               <Route path="/about" component={About} />
               <Route path="/" component={Home} />
