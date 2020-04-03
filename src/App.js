@@ -17,6 +17,7 @@ class App extends Component {
 
     this.state = {};
   }
+
   render() {
     return (
       <div className="App">
@@ -29,9 +30,10 @@ class App extends Component {
           <main>
             <Switch>
               <Route path="/admin" component={Admin} />
-              <Route path="/listings/:id">
-                <SingleListing />
-              </Route>
+              <Route path="/listings/:id" 
+              render={(props) => <SingleListing
+              id={props.match.params.id}
+              />}/>
               <Route path="/listings">
                 <Listings />
               </Route>

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   return (
     <div>
       <nav className="header-nav">
@@ -9,7 +9,7 @@ function Header() {
           <li className="header-link">
             <Link to="/"><b>Home</b></Link>
           </li>
-          <li className="header-link">
+          <li className="header-link" onClick={props.onListingsClick}>
             <Link to="/listings"><b>Listings</b></Link>
           </li>
           <li className="header-link">

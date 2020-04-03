@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import {getListings} from '../services/api_helper'
+import { getListings, getSingleListing } from "../services/api_helper";
 
 class SingleListing extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      listings: [],
+      singleListing: {},
       listing: null,
       currentListing: null,
       listingId: null
@@ -14,9 +14,10 @@ class SingleListing extends Component {
   }
 
   componentDidMount = async () => {
-    const listings = await getListings();
+    await getListings();
+    const singleListing = await getSingleListing(this.props.id);
     this.setState({
-      listings
+      singleListing
     });
   };
 
@@ -47,16 +48,12 @@ class SingleListing extends Component {
     return (
       <div className="single-listing">
         <h1>Property Details</h1>
-        {this.state.listings.map(listing => (
-          <div>
             <h2>
               <b>
-                {listing.address} {listing.address2} {listing.state}{" "}
-                {listing.city} {listing.zip}
+                {this.state.singleListing.address}{this.state.singleListing.address2} {this.state.singleListing.state}
+                {this.state.singleListing.city} {this.state.singleListing.zip}
               </b>
             </h2>
-          </div>
-        ))}
       </div>
     );
   }

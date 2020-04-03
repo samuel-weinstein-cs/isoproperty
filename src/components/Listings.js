@@ -7,7 +7,7 @@ class Listings extends Component {
     super(props);
 
     this.state = {
-      listings: []
+        listings: []
     };
   }
 
