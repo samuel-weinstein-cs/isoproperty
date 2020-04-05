@@ -34,7 +34,11 @@
 }
 
 .web-name {
-  margin-right: 40%;
+  margin-right: 63.5%;
+  margin-top: 7.5%;
+  border-bottom: solid rgba(73, 71, 71, 0.4) 2.3px;
+  height: 44px;
+  font-size: 30px;
 }
 
 .header-link,
@@ -133,6 +137,7 @@ a:hover {
 .listing p {
   display: flex;
   font-size: 15px;
+
 }
 
 .listing {
@@ -194,4 +199,39 @@ a:hover {
   position: relative;
   left: 170%;
   bottom: 30px;
+}
+
+.prop-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.prop-details span {
+  margin-top: 45px;
+}
+
+.single-listing-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.single-prop-img {
+  width: 700px;
+  height: 400px;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+}
+
+.isoprop-logo {
+  position: relative;
+  right: 10px;
+  height: 240px;
+  width: 200px;
 }
