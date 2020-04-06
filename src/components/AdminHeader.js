@@ -3,33 +3,28 @@ import { Link } from "react-router-dom";
 
 function AdminHeader() {
   return (
-    <div>
+    <div className="admin-header">
       <nav className="header-nav">
-        <ul className="nav-list">
+        <ul className="admin-nav-list">
           <li className="header-link">
             <Link to="/edit-listings">
-              <b>Edit Listings</b>
+              <b>EditListings</b>
             </Link>
           </li>
           <li className="header-link">
             <Link to="/edit-about">
-              <b>Edit About</b>
+              <b>EditAbout</b>
             </Link>
           </li>
           <li className="header-link">
             <Link to="/edit-galleries">
-              <b>Edit Galleries</b>
+              <b>EditGalleries</b>
             </Link>
           </li>
           <li className="header-link">
             <Link to="/edit-agents">
-            <b>Edit Agents</b>
+            <b>EditAgents</b>
             </Link>
-          </li>
-          <li className="header-link">
-              <Link to="/edit-galleries">
-                  <b>Edit Galleries</b>
-              </Link>
           </li>
         </ul>
       </nav>

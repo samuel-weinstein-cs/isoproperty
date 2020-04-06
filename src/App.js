@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import { loginUser, verifyUser, getListings } from "./services/api_helper";
+import { loginUser, verifyUser } from "./services/api_helper";
 
 import "./App.css";
 
@@ -11,7 +11,9 @@ import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Listings from "./components/Listings.js";
 import SingleListing from "./components/SingleListing.js";
-import AdminHeader from "./components/AdminHeader.js";
+import EditListings from "./components/EditListings.js";
+import AdminHeader from "./components/AdminHeader";
+import EditAbout from "./components/EditAbout";
 
 class App extends Component {
   constructor(props) {
@@ -66,17 +68,26 @@ class App extends Component {
               <span className="iso-box">Iso</span> Property Corp
             </h1>
           </div>
-          {/* <Header /> */}
 
           <main>
             <Switch>
               <Route path="/admin">
-                <Admin/>
-                <Route path="/edit-listings"></Route>
-                <Route path="/edit-about"></Route>
-                <Route path="/edit-galleries"></Route>
-                <Route path="/edit-agents"></Route>
-              </Route>
+                <Admin />
+                </Route>
+                <Route path="/edit-listings">
+                  <AdminHeader />
+                  <EditListings />
+                </Route>
+                <Route path="/edit-about">
+                  <AdminHeader />
+                  <EditAbout />
+                </Route>
+                <Route path="/edit-galleries">
+                  <AdminHeader/>
+                </Route>
+                <Route path="/edit-agents">
+                  <AdminHeader/>
+                </Route>
               <Route exact path="/">
                 <Header />
                 <Home />

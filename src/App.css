@@ -226,7 +226,7 @@ a:hover {
 .header-flex {
   display: flex;
   flex-direction: row;
-  height: 200px;
+  height: 100px;
 }
 
 .isoprop-logo {
@@ -234,4 +234,31 @@ a:hover {
   right: 10px;
   height: 240px;
   width: 200px;
+}
+
+.admin-nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.admin-nav-list .header-link {
+  list-style-type: none;
+}
+
+.listings {
+  margin-top: 3%;
+}
+
+.admin-header {
+  margin-top: 6%;
+}
+
+.header {
+  margin-top: 6%;
+}
+
+.about-input{
+  width: 500px;
+  height: 300px;
 }
