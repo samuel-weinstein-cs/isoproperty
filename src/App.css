@@ -194,11 +194,12 @@ a:hover {
 }
 
 .address-img {
-  height: 200px;
-  width: 250px;
+  height: 160px;
+  width: 210px;
   position: relative;
   left: 170%;
   bottom: 30px;
+  top: 0.1px;
 }
 
 .prop-details {
@@ -261,4 +262,89 @@ a:hover {
 .about-input{
   width: 500px;
   height: 300px;
+}
+
+.agent-img {
+  width: 200px;
+  height: 200px;
+}
+
+.agents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: solid #009999 1px;
+  border-bottom: solid #009999 1px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.edit-single-listing {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-listing-form {
+  margin-left: 43%;
+  margin-right: 43%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-listing-form .edit-input {
+  height: 16.7px;
+  width: 500px;
+  margin-top: 13px;
+  margin-left: 5px;
+}
+
+.input-labels {
+  text-align: left;
+  position: relative;
+  left: 30%;
+}
+
+.edit-listing-form {
+  position: relative;
+  right: 10%;
+}
+
+.rental {
+  position: relative;
+  top: 5px;
+}
+
+.gallery-img {
+  width: 200px;
+  height: 200px;
+}
+
+.gallery {
+  grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.edit-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-selection {
+  position: relative;
+  left: 170%;
+  bottom: 20%;
 }

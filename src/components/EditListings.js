@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { getListings } from "../services/api_helper";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class EditListings extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        listings: []
+      listings: []
     };
   }
 
@@ -26,14 +26,14 @@ class EditListings extends Component {
           <h2 className="sales">Sales</h2>
           <p className="click-img">
             <i>
-              Click the address or thumbnail photo below <br /> to edit
-              property details
+              Click the address or thumbnail photo below <br /> to edit property
+              details
             </i>
           </p>
         </div>
         {this.state.listings.map((listing, index) => (
           <div className="listing" key={index}>
-            <Link to={`/listings/${listing.id}`}>
+            <Link to={`/listings/${listing.id}/edit`}>
               <p className="listing-title">
                 <b>
                   {listing.address} {listing.address2} {listing.state}{" "}
@@ -64,13 +64,20 @@ class EditListings extends Component {
                   <b>Description: </b> {listing.description}
                 </p>
               </div>
-              <Link to={`/listings/${listing.id}`}>
-                <img
-                  className="address-img"
-                  src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
-                  alt="address"
-                />
-              </Link>
+              <div className="edit-image">
+                <form className="image-selection" action="/action_page.php">
+                  <label for="img">Select image: </label>
+                  <input type="file" id="img" name="img" accept="image/*" />
+                  <input type="submit" />
+                </form>
+                <Link to={`/listings/${listing.id}/edit`}>
+                  <img
+                    className="address-img"
+                    src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
+                    alt="address"
+                  />
+                </Link>
+                </div>
             </div>
           </div>
         ))}

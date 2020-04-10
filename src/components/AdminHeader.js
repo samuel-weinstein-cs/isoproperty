@@ -17,11 +17,6 @@ function AdminHeader() {
             </Link>
           </li>
           <li className="header-link">
-            <Link to="/edit-galleries">
-              <b>EditGalleries</b>
-            </Link>
-          </li>
-          <li className="header-link">
             <Link to="/edit-agents">
             <b>EditAgents</b>
             </Link>

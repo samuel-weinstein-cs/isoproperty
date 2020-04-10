@@ -14,6 +14,7 @@ import SingleListing from "./components/SingleListing.js";
 import EditListings from "./components/EditListings.js";
 import AdminHeader from "./components/AdminHeader";
 import EditAbout from "./components/EditAbout";
+import EditListingsForm from "./components/EditListingsForm";
 
 class App extends Component {
   constructor(props) {
@@ -73,26 +74,26 @@ class App extends Component {
             <Switch>
               <Route path="/admin">
                 <Admin />
-                </Route>
-                <Route path="/edit-listings">
-                  <AdminHeader />
-                  <EditListings />
-                </Route>
-                <Route path="/edit-about">
-                  <AdminHeader />
-                  <EditAbout />
-                </Route>
-                <Route path="/edit-galleries">
-                  <AdminHeader/>
-                </Route>
-                <Route path="/edit-agents">
-                  <AdminHeader/>
-                </Route>
+              </Route>
+              <Route path="/edit-listings">
+                <AdminHeader />
+                <EditListings />
+              </Route>
+              <Route path="/edit-about">
+                <AdminHeader />
+                <EditAbout />
+              </Route>
+              <Route path="/edit-agents">
+                <AdminHeader />
+              </Route>
               <Route exact path="/">
                 <Header />
                 <Home />
               </Route>
               <Switch>
+                <Route path="/listings/:id/edit">
+                  <EditListingsForm />
+                </Route>
                 <Route
                   path="/listings/:id"
                   render={props => <SingleListing id={props.match.params.id} />}
