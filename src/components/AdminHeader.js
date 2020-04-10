@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function AdminHeader() {
   return (
-    <div className="header">
+    <div className="admin-header">
       <nav className="header-nav">
-        <ul className="nav-list">
+        <ul className="admin-nav-list">
           <li className="header-link">
-            <Link to="/">
-              <b>Home</b>
+            <Link to="/edit-listings">
+              <b>EditListings</b>
             </Link>
           </li>
           <li className="header-link">
-            <Link to="/listings">
-              <b>Listings</b>
+            <Link to="/edit-about">
+              <b>EditAbout</b>
             </Link>
           </li>
           <li className="header-link">
-            <Link to="/about">
-              <b>About</b>
+            <Link to="/edit-agents">
+            <b>EditAgents</b>
             </Link>
           </li>
         </ul>
@@ -27,4 +27,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default AdminHeader;

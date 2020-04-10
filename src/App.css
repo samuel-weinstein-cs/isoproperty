@@ -1,5 +1,18 @@
+/* html {
+  background: url();
+  background-size: cover;
+} */
+
 .App {
   text-align: center;
+}
+
+.content {
+  min-height: calc(100vh - 150px);
+}
+
+.contact {
+  height: 100px;
 }
 
 .header-link {
@@ -9,5 +22,329 @@
 .nav-list {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.iso-box {
+  color: white;
+  background-color: #009999;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.web-name {
+  margin-right: 63.5%;
+  margin-top: 7.5%;
+  border-bottom: solid rgba(73, 71, 71, 0.4) 2.3px;
+  height: 44px;
+  font-size: 30px;
+}
+
+.header-link,
+a {
+  text-decoration: none;
+  color: #009999;
+  margin-left: 10%;
+}
+
+.header-link,
+a:hover {
+  color: grey;
+}
+
+.nav-list {
+  margin-right: 30%;
+}
+
+.about-p {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.about-header {
+  letter-spacing: 5px;
+}
+
+.contact p {
+  font-size: 10px;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.home-p {
+  margin-left: 20%;
+  margin-right: 20%;
+  letter-spacing: 5px;
+}
+
+.home-header {
+  color: #009999;
+}
+
+.about p {
+  text-align: center;
+}
+
+.license {
+  color: rgb(50, 50, 50);
+}
+
+.email {
+  color: #009999;
+}
+
+.upper-contact {
+  border-bottom: solid grey 1px;
+  width: 200px;
+  margin-left: 43%;
+}
+
+.submit {
+  color: white;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: #009999;
+}
+
+.submit:hover {
+  color: #009999;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+}
+
+.username-input {
+  width: 200px;
+  height: 20px;
+}
+
+.password-input {
+  width: 200px;
+  height: 20px;
+}
+
+.home-img {
+  height: 50vh;
+}
+
+.admin-login {
+  margin-top: 50px;
+}
+
+.listing p {
+  display: flex;
+  font-size: 15px;
+
+}
+
+.listing {
+  border-top: solid #009999 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 240px;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+}
+
+.click-img {
+  position: relative;
+  top: 10px;
+  left: 18%;
+}
+
+.sales {
+  position: relative;
+  right: 17.8%;
+  top: 20px;
+  color: grey;
+}
+
+.listing-title {
+  width: 600px;
+  color: #009999;
+  font-size: 20px !important;
+  padding: 0;
+  line-height: 0;
+  margin-right: 10%;
+}
+
+.listing-flex-container {
+  display: flex;
+  flex-direction: row;
+  /* position: relative; */
+  margin-bottom: 40%;
+}
+
+.listing-flex-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-flex-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+}
+
+.address-img {
+  height: 160px;
+  width: 210px;
+  position: relative;
+  left: 170%;
+  bottom: 30px;
+  top: 0.1px;
+}
+
+.prop-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.prop-details span {
+  margin-top: 45px;
+}
+
+.single-listing-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.single-prop-img {
+  width: 700px;
+  height: 400px;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+
+.isoprop-logo {
+  position: relative;
+  right: 10px;
+  height: 240px;
+  width: 200px;
+}
+
+.admin-nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.admin-nav-list .header-link {
+  list-style-type: none;
+}
+
+.listings {
+  margin-top: 3%;
+}
+
+.admin-header {
+  margin-top: 6%;
+}
+
+.header {
+  margin-top: 6%;
+}
+
+.about-input{
+  width: 500px;
+  height: 300px;
+}
+
+.agent-img {
+  width: 200px;
+  height: 200px;
+}
+
+.agents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: solid #009999 1px;
+  border-bottom: solid #009999 1px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.edit-single-listing {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-listing-form {
+  margin-left: 43%;
+  margin-right: 43%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-listing-form .edit-input {
+  height: 16.7px;
+  width: 500px;
+  margin-top: 13px;
+  margin-left: 5px;
+}
+
+.input-labels {
+  text-align: left;
+  position: relative;
+  left: 30%;
+}
+
+.edit-listing-form {
+  position: relative;
+  right: 10%;
+}
+
+.rental {
+  position: relative;
+  top: 5px;
+}
+
+.gallery-img {
+  width: 200px;
+  height: 200px;
+}
+
+.gallery {
+  grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.edit-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-selection {
+  position: relative;
+  left: 170%;
+  bottom: 20%;
 }
