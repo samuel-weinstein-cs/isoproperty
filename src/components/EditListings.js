@@ -68,16 +68,16 @@ class EditListings extends Component {
                 <form className="image-selection" action="/action_page.php">
                   <label for="img">Select image: </label>
                   <input type="file" id="img" name="img" accept="image/*" />
-                  <input type="submit" />
+                  <input className="el-img-submit" type="submit" />
                 </form>
                 <Link to={`/listings/${listing.id}/edit`}>
                   <img
-                    className="address-img"
+                    className="edit-address-img"
                     src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
                     alt="address"
                   />
                 </Link>
-                </div>
+              </div>
             </div>
           </div>
         ))}

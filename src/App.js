@@ -15,6 +15,7 @@ import EditListings from "./components/EditListings.js";
 import AdminHeader from "./components/AdminHeader";
 import EditAbout from "./components/EditAbout";
 import EditListingsForm from "./components/EditListingsForm";
+import EditAgents from './components/EditAgents';
 
 class App extends Component {
   constructor(props) {
@@ -85,6 +86,7 @@ class App extends Component {
               </Route>
               <Route path="/edit-agents">
                 <AdminHeader />
+                <EditAgents/>
               </Route>
               <Route exact path="/">
                 <Header />

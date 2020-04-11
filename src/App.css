@@ -194,12 +194,11 @@ a:hover {
 }
 
 .address-img {
-  height: 160px;
-  width: 210px;
+  height: 200px;
+  width: 250px;
   position: relative;
   left: 170%;
   bottom: 30px;
-  top: 0.1px;
 }
 
 .prop-details {
@@ -344,7 +343,60 @@ a:hover {
 }
 
 .image-selection {
+  display: flex;
+  flex-direction: row;
   position: relative;
-  left: 170%;
+  left: 100%;
   bottom: 20%;
 }
+
+.agent-image-selection {
+  position: relative;
+  right: 35%;
+}
+
+.edit-agent-img {
+  border: solid black 1px;
+  position: relative;
+  left: 20px;
+}
+
+.agent-name-email {
+  display: flex;
+  flex-direction: row;
+}
+
+.agent-img-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.agent-text-area {
+  position: relative;
+  left: 10%;
+  width: 1000px;
+}
+
+/* .img-submit {
+  position: relative;
+  right: 5%;
+} */
+
+.agent-contact {
+  position: relative;
+  right: 44%;
+}
+
+.edit-address-img {
+  height: 150px;
+  width: 200px;
+  position: relative;
+  top: 0.3%;
+  left: 110%;
+  bottom: 30px;
+}
+
+/* .el-img-submit {
+  position: relative;
+  right: 15%;
+} */

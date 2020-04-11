@@ -24,22 +24,72 @@ class EditListingsForm extends Component {
           <p>Description:</p>
         </div>
         <form className="edit-listing-form">
-          <input className="edit-input" type="text" name="address" placeholder="address" />
-          <input className="edit-input" type="text" name="address2" placeholder="address2" />
-          <input className="edit-input" type="text" name="state" placeholder="state" />
-          <input className="edit-input" type="text" name="city" placeholder="city" />
-          <input className="edit-input" type="text" name="zip" placeholder="zip" />
-          <input className="edit-input" type="text" name="price" placeholder="price" />
+          <input
+            className="edit-input"
+            type="text"
+            name="address"
+            placeholder="address"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="address2"
+            placeholder="address2"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="state"
+            placeholder="state"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="city"
+            placeholder="city"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="zip"
+            placeholder="zip"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="price"
+            placeholder="price"
+          />
           <div className="rental">
             <input type="checkbox" id="true" name="true" value="true" />
             <label for="true">True</label>
             <input type="checkbox" id="false" name="false" value="false" />
             <label for="false">False</label>
           </div>
-          <input className="edit-input" type="text" name="size" placeholder="size" />
-          <input className="edit-input" type="text" name="bedrooms" placeholder="bedrooms" />
-          <input className="edit-input" type="text" name="neighborhood" placeholder="neighborhood" />
-          <input className="edit-input" type="text" name="description" placeholder="description" />
+          <input
+            className="edit-input"
+            type="text"
+            name="size"
+            placeholder="size"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="bedrooms"
+            placeholder="bedrooms"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="neighborhood"
+            placeholder="neighborhood"
+          />
+          <input
+            className="edit-input"
+            type="text"
+            name="description"
+            placeholder="description"
+          />
         </form>
       </div>
     );
