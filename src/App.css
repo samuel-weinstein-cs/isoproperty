@@ -290,27 +290,11 @@ a:hover {
 
 .edit-single-listing {
   margin-top: 10%;
-  display: flex;
-  flex-direction: row;
-}
-
-.edit-listing-form {
-  margin-left: 43%;
-  margin-right: 43%;
-  display: flex;
-  flex-direction: column;
 }
 
 .input-flex {
   display: flex;
   flex-direction: row;
-}
-
-.edit-listing-form .edit-input {
-  height: 16.7px;
-  width: 500px;
-  margin-top: 13px;
-  margin-left: 5px;
 }
 
 .input-labels {
@@ -319,10 +303,6 @@ a:hover {
   left: 30%;
 }
 
-.edit-listing-form {
-  position: relative;
-  right: 10%;
-}
 
 .rental {
   position: relative;
@@ -343,8 +323,7 @@ a:hover {
   flex-direction: column;
 }
 
-.image-selection {
-  position: relative;
-  left: 170%;
-  bottom: 20%;
+.edit-listing-form {
+  display: flex;
+  flex-direction: column;
 }

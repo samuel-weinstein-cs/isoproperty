@@ -10,36 +10,55 @@ class EditListingsForm extends Component {
   render() {
     return (
       <div className="edit-single-listing">
-        <div className="input-labels">
-          <p>Address:</p>
-          <p>Address2:</p>
-          <p>State:</p>
-          <p>City:</p>
-          <p>Zip:</p>
-          <p>Price:</p>
-          <p>Rental:</p>
-          <p>Size:</p>
-          <p>Bedrooms:</p>
-          <p>Neighborhood:</p>
-          <p>Description:</p>
-        </div>
         <form className="edit-listing-form">
-          <input className="edit-input" type="text" name="address" placeholder="address" />
-          <input className="edit-input" type="text" name="address2" placeholder="address2" />
-          <input className="edit-input" type="text" name="state" placeholder="state" />
-          <input className="edit-input" type="text" name="city" placeholder="city" />
-          <input className="edit-input" type="text" name="zip" placeholder="zip" />
-          <input className="edit-input" type="text" name="price" placeholder="price" />
-          <div className="rental">
-            <input type="checkbox" id="true" name="true" value="true" />
-            <label for="true">True</label>
-            <input type="checkbox" id="false" name="false" value="false" />
-            <label for="false">False</label>
+          <div>
+            <label for="address">Address:</label>
+            <input className="edit-input" type="text" name="address" placeholder="address" />
           </div>
-          <input className="edit-input" type="text" name="size" placeholder="size" />
-          <input className="edit-input" type="text" name="bedrooms" placeholder="bedrooms" />
-          <input className="edit-input" type="text" name="neighborhood" placeholder="neighborhood" />
-          <input className="edit-input" type="text" name="description" placeholder="description" />
+          <div>
+            <label for="address2">Address Line 2:</label>
+            <input className="edit-input" type="text" name="address2" placeholder="address 2" />
+          </div>
+          <div>
+            <label for="state">State:</label>
+            <input className="edit-input" type="text" name="state" placeholder="state" />
+          </div>
+          <div>
+            <label for="city">City:</label>
+            <input className="edit-input" type="text" name="city" placeholder="city" />
+          </div>
+          <div>
+            <label for="zip">Zip Code:</label>
+            <input className="edit-input" type="text" name="zip" placeholder="zip" />
+          </div>
+          <div>
+            <label for="price">Price:</label>
+            <input className="edit-input" type="text" name="price" placeholder="price" />
+            <label for="rental">Rental:</label>
+            <input type="checkbox" name="rental"/>
+          </div>
+          <div>
+            <label for="size">Size (ft²):</label>
+            <input className="edit-input" type="text" name="size" placeholder="size" />
+          </div>
+          <div>
+            <label for="bedrooms">Bedrooms:</label>
+            <input className="edit-input" type="text" name="bedrooms" placeholder="bedrooms" />
+          </div>
+          <div>
+            <label for="neighborhood">Neighborhood:</label>
+            <input className="edit-input" type="text" name="neighborhood" placeholder="neighborhood" />
+          </div>
+          <div>
+            <label for="description">Description:</label>
+            <input className="edit-input" type="text" name="description" placeholder="description" />
+          </div>
+
+        </form>
+        <form className="image-selection" action="/action_page.php">
+          <label for="img">Select image: </label>
+          <input type="file" id="img" name="img" accept="image/*" />
+          <input type="submit" />
         </form>
       </div>
     );
