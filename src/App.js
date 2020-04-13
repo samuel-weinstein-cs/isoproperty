@@ -90,23 +90,22 @@ class App extends Component {
                 <Header />
                 <Home />
               </Route>
-              <Switch>
-                <Route path="/listings/:id/edit">
-                  <EditListingsForm />
-                </Route>
-                <Route
-                  path="/listings/:id"
-                  render={props => <SingleListing id={props.match.params.id} />}
+              <Route
+                path="/listings/:id/edit"
+                render={props => <EditListingsForm id={props.match.params.id} />}
                 />
-                <Route path="/listings">
-                  <Header />
-                  <Listings />
-                </Route>
-                <Route path="/about">
-                  <Header />
-                  <About />
-                </Route>
-              </Switch>
+              <Route
+                path="/listings/:id"
+                render={props => <SingleListing id={props.match.params.id} />}
+              />
+              <Route path="/listings">
+                <Header />
+                <Listings />
+              </Route>
+              <Route path="/about">
+                <Header />
+                <About />
+              </Route>
             </Switch>
           </main>
         </div>
