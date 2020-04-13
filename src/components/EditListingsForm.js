@@ -7,57 +7,137 @@ class EditListingsForm extends Component {
     this.state = {};
   }
 
+  handleChange = (e) => {
+    const {name, value, type, checked} = e.target;
+    let newState;
+    if(type==="checkbox"){
+      newState={
+        [name]: checked
+      }
+    } else {
+      newState={
+        [name]: value
+      }
+    }
+    console.log({...this.state, ...newState});
+    this.setState(newState)
+  }
+
   render() {
     return (
       <div className="edit-single-listing">
         <form className="edit-listing-form">
           <div>
-            <label for="address">Address:</label>
-            <input className="edit-input" type="text" name="address" placeholder="address" />
+            <label htmlFor="address">Address:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="address"
+              placeholder="address"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="address2">Address Line 2:</label>
-            <input className="edit-input" type="text" name="address2" placeholder="address 2" />
+            <label htmlFor="address2">Address Line 2:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="address2"
+              placeholder="address 2"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="state">State:</label>
-            <input className="edit-input" type="text" name="state" placeholder="state" />
+            <label htmlFor="state">State:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="state"
+              placeholder="state"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="city">City:</label>
-            <input className="edit-input" type="text" name="city" placeholder="city" />
+            <label htmlFor="city">City:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="city"
+              placeholder="city"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="zip">Zip Code:</label>
-            <input className="edit-input" type="text" name="zip" placeholder="zip" />
+            <label htmlFor="zip">Zip Code:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="zip"
+              placeholder="zip"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="price">Price:</label>
-            <input className="edit-input" type="text" name="price" placeholder="price" />
-            <label for="rental">Rental:</label>
-            <input type="checkbox" name="rental"/>
+            <label htmlFor="price">Price:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="price"
+              placeholder="price"
+              onChange={this.handleChange}
+              />
+            <label htmlFor="rental">Rental:</label>
+            <input
+              type="checkbox"
+              name="rental"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="size">Size (ft²):</label>
-            <input className="edit-input" type="text" name="size" placeholder="size" />
+            <label htmlFor="size">Size (ft²):</label>
+            <input
+              className="edit-input"
+              type="text" name="size"
+              placeholder="size"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="bedrooms">Bedrooms:</label>
-            <input className="edit-input" type="text" name="bedrooms" placeholder="bedrooms" />
+            <label htmlFor="bedrooms">Bedrooms:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="bedrooms"
+              placeholder="bedrooms"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="neighborhood">Neighborhood:</label>
-            <input className="edit-input" type="text" name="neighborhood" placeholder="neighborhood" />
+            <label htmlFor="neighborhood">Neighborhood:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="neighborhood"
+              placeholder="neighborhood"
+              onChange={this.handleChange}
+              />
           </div>
           <div>
-            <label for="description">Description:</label>
-            <input className="edit-input" type="text" name="description" placeholder="description" />
+            <label htmlFor="description">Description:</label>
+            <input
+              className="edit-input"
+              type="text"
+              name="description"
+              placeholder="description"
+              onChange={this.handleChange}
+              />
           </div>
 
         </form>
-        <form className="image-selection" action="/action_page.php">
-          <label for="img">Select image: </label>
-          <input type="file" id="img" name="img" accept="image/*" />
+        <form className="image-selection">
+          <label htmlFor="img">Select image: </label>
+          <input
+            type="file" id="img" name="img" accept="image/*" />
           <input type="submit" />
         </form>
       </div>
