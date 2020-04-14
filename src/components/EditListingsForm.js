@@ -11,33 +11,35 @@ class EditListingsForm extends Component {
     super(props);
 
     this.fileInput = React.createRef();
-    this.state = {};
+    this.state = {
+      fields:{},
+      images:[],
+    };
   }
 
   async componentDidMount() {
     const listingData = await getSingleListing(this.props.id);
-    this.setState(listingData);
+    this.setState({fields:listingData});
   }
 
   handleChange = (e) => {
     const {name, value, type, checked} = e.target;
-    let newState;
+    let fields=this.state.fields;
+    let newField;
     if(type==="checkbox"){
-      newState={
-        [name]: checked
-      }
+      newField = checked
     } else {
-      newState={
-        [name]: value
-      }
+      newField = value
     }
-    console.log({...this.state, ...newState});
-    this.setState(newState)
+    fields[name]=newField;
+    this.setState({
+      fields
+    })
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    await putListing(this.props.id, this.state);
+    await putListing(this.props.id, this.state.fields);
   }
 
   handleFileUpload = async (e) => {
@@ -61,7 +63,7 @@ class EditListingsForm extends Component {
               name="address"
               placeholder="address"
               onChange={this.handleChange}
-              value={this.state.address}
+              value={this.state.fields.address||""}
               />
           </div>
           <div>
@@ -72,7 +74,7 @@ class EditListingsForm extends Component {
               name="address2"
               placeholder="address 2"
               onChange={this.handleChange}
-              value={this.state.address2}
+              value={this.state.fields.address2||""}
               />
           </div>
           <div>
@@ -83,7 +85,7 @@ class EditListingsForm extends Component {
               name="state"
               placeholder="state"
               onChange={this.handleChange}
-              value={this.state.state}
+              value={this.state.fields.state||""}
               />
           </div>
           <div>
@@ -94,7 +96,7 @@ class EditListingsForm extends Component {
               name="city"
               placeholder="city"
               onChange={this.handleChange}
-              value={this.state.city}
+              value={this.state.fields.city||""}
               />
           </div>
           <div>
@@ -105,7 +107,7 @@ class EditListingsForm extends Component {
               name="zip"
               placeholder="zip"
               onChange={this.handleChange}
-              value={this.state.zip}
+              value={this.state.fields.zip||""}
               />
           </div>
           <div className="price-input">
@@ -116,7 +118,7 @@ class EditListingsForm extends Component {
               name="price"
               placeholder="price"
               onChange={this.handleChange}
-              value={this.state.price}
+              value={this.state.fields.price||""}
               />
 
             <div className="rental">
@@ -125,7 +127,7 @@ class EditListingsForm extends Component {
                 type="checkbox"
                 name="rental"
                 onChange={this.handleChange}
-                checked={this.state.rental}
+                checked={this.state.fields.rental||""}
                 />
             </div>
           </div>
@@ -137,7 +139,7 @@ class EditListingsForm extends Component {
               type="text" name="size"
               placeholder="size"
               onChange={this.handleChange}
-              value={this.state.size}
+              value={this.state.fields.size||false}
               />
           </div>
           <div>
@@ -148,7 +150,7 @@ class EditListingsForm extends Component {
               name="bedrooms"
               placeholder="bedrooms"
               onChange={this.handleChange}
-              value={this.state.bedrooms}
+              value={this.state.fields.bedrooms||""}
               />
           </div>
           <div>
@@ -159,7 +161,7 @@ class EditListingsForm extends Component {
               name="neighborhood"
               placeholder="neighborhood"
               onChange={this.handleChange}
-              value={this.state.neighborhood}
+              value={this.state.fields.neighborhood||""}
               />
           </div>
           <div>
@@ -170,7 +172,7 @@ class EditListingsForm extends Component {
               name="description"
               placeholder="description"
               onChange={this.handleChange}
-              value={this.state.description}
+              value={this.state.fields.description||""}
               />
           </div>
           <input type="submit" className="submit" value="Save Listing" />
