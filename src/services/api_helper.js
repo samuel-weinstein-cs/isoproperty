@@ -42,12 +42,12 @@ export const postImage = async (listingId, file) => {
 }
 
 export const loginUser = async (loginData) => {
-  const resp = await api.post('/auth/login', loginData);
+  const resp = await api.post('/agents/login', loginData);
   console.log(resp);
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
-  localStorage.setItem('authToken', resp.data.auth_token);
-  localStorage.setItem('name', resp.data.user.name);
-  localStorage.setItem('id', resp.data.user.id )
+  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+  localStorage.setItem('authToken', resp.data.token);
+  localStorage.setItem('name', resp.data.agent.name);
+  localStorage.setItem('id', resp.data.agent.id )
   return resp.data.user;
 }
 

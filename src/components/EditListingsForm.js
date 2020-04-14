@@ -29,9 +29,9 @@ class EditListingsForm extends Component {
     this.setState(newState)
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    putListing(this.props.id, this.state);
+    await putListing(this.props.id, this.state);
   }
 
   render() {
