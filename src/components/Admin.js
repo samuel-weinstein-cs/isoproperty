@@ -6,29 +6,35 @@ class Admin extends Component {
     super(props);
 
     this.state = {
-      currentUser: null,
-      loggedIn: false
+      email:"",
+      password:""
     };
   }
 
-  loginSubmit = () => {
+  handleChange = (e) => {
+    const {name, value} = e.target;
     this.setState({
-      loggedIn: true
-    });
+      [name]: value
+    })
+  }
+
+  loginSubmit = async (e) => {
+    e.preventDefault();
+    await this.props.handleLogin(this.state);
   };
 
   render() {
     return (
       <div>
         <AdminHeader/>
-        <form className="admin-login">
+        <form className="admin-login" onSubmit={this.loginSubmit}>
           <input
-            className="username-input"
+            className="email-input"
             autoComplete="off"
             type="text"
-            name="username"
-            placeholder="Username"
-            value={this.state.username}
+            name="email"
+            placeholder="Email"
+            value={this.state.email}
             onChange={this.handleChange}
           />
           <br />

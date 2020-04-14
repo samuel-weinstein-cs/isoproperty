@@ -29,8 +29,7 @@ class App extends Component {
     };
   }
 
-  handleLogin = async (e, loginData) => {
-    e.preventDefault();
+  handleLogin = async (loginData) => {
     const currentUser = await loginUser(loginData);
     this.setState({ currentUser });
   };
@@ -47,8 +46,8 @@ class App extends Component {
     verifyUser();
     if (localStorage.getItem("authToken")) {
       const name = localStorage.getItem("name");
-      const email = localStorage.getItem("email");
-      const user = { name, email };
+      const id = localStorage.getItem("id");
+      const user = { name, id };
       user &&
         this.setState({
           currentUser: user
@@ -74,7 +73,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route path="/admin">
-                <Admin />
+                <Admin handleLogin={this.handleLogin}/>
               </Route>
               <Route path="/edit-listings">
                 <AdminHeader />
@@ -92,23 +91,22 @@ class App extends Component {
                 <Header />
                 <Home />
               </Route>
-              <Switch>
-                <Route path="/listings/:id/edit">
-                  <EditListingsForm />
-                </Route>
-                <Route
-                  path="/listings/:id"
-                  render={props => <SingleListing id={props.match.params.id} />}
+              <Route
+                path="/listings/:id/edit"
+                render={props => <EditListingsForm id={props.match.params.id} />}
                 />
-                <Route path="/listings">
-                  <Header />
-                  <Listings />
-                </Route>
-                <Route path="/about">
-                  <Header />
-                  <About />
-                </Route>
-              </Switch>
+              <Route
+                path="/listings/:id"
+                render={props => <SingleListing id={props.match.params.id} />}
+              />
+              <Route path="/listings">
+                <Header />
+                <Listings />
+              </Route>
+              <Route path="/about">
+                <Header />
+                <About />
+              </Route>
             </Switch>
           </main>
         </div>

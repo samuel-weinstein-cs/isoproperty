@@ -65,11 +65,6 @@ class EditListings extends Component {
                 </p>
               </div>
               <div className="edit-image">
-                <form className="image-selection" action="/action_page.php">
-                  <label for="img">Select image: </label>
-                  <input type="file" id="img" name="img" accept="image/*" />
-                  <input className="el-img-submit" type="submit" />
-                </form>
                 <Link to={`/listings/${listing.id}/edit`}>
                   <img
                     className="edit-address-img"

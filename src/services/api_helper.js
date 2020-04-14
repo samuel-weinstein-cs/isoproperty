@@ -9,24 +9,51 @@ export const getListings = async () => {
     return resp.data;
   }
 
-  export const getSingleListing = async (id) => {
-    const resp = await api.get(`/listings/${id}`)
-    return resp.data;
-  }
+export const getSingleListing = async (id) => {
+  const resp = await api.get(`/listings/${id}`)
+  return resp.data;
+}
 
-  export const loginUser = async (loginData) => {
-    const resp = await api.post('/auth/login', loginData);
-    console.log(resp);
-    api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
-    localStorage.setItem('authToken', resp.data.auth_token);
-    localStorage.setItem('name', resp.data.user.name);
-    localStorage.setItem('id', resp.data.user.id )
-    return resp.data.user;
-  }
+export const postListing = async (listingData) => {
+  const resp = await api.post(`/listings/`, listingData);
+  return resp;
+}
+export const putListing = async (id, listingData) => {
+  const resp = await api.put(`/listings/${id}`, listingData);
+  return resp;
+}
 
-  export const verifyUser = () => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      api.defaults.headers.common.authorization = `Bearer ${token}`;
+export const postImage = async (listingId, file) => {
+  const fileParts = file.name.split('.');
+  const signedResponse = await api.post(`/listings/${listingId}/image/`, {
+    fileName:fileParts[0],
+    fileType:fileParts[1]
+  })
+  console.log(signedResponse);
+
+  const options={
+    headers: {
+      'Content-Type': fileParts[1]
     }
   }
+  await axios.put(signedResponse.data.request, file, options);
+  console.log("File Uploaded");
+  return signedResponse;
+}
+
+export const loginUser = async (loginData) => {
+  const resp = await api.post('/agents/login', loginData);
+  console.log(resp);
+  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+  localStorage.setItem('authToken', resp.data.token);
+  localStorage.setItem('name', resp.data.agent.name);
+  localStorage.setItem('id', resp.data.agent.id )
+  return resp.data.user;
+}
+
+export const verifyUser = () => {
+  const token = localStorage.getItem('authToken');
+  if (token) {
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+  }
+}

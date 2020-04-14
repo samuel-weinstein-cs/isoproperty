@@ -116,7 +116,7 @@ a:hover {
   background-color: white;
 }
 
-.username-input {
+.email-input {
   width: 200px;
   height: 20px;
 }
@@ -289,27 +289,11 @@ a:hover {
 
 .edit-single-listing {
   margin-top: 10%;
-  display: flex;
-  flex-direction: row;
-}
-
-.edit-listing-form {
-  margin-left: 43%;
-  margin-right: 43%;
-  display: flex;
-  flex-direction: column;
 }
 
 .input-flex {
   display: flex;
   flex-direction: row;
-}
-
-.edit-listing-form .edit-input {
-  height: 16.7px;
-  width: 500px;
-  margin-top: 13px;
-  margin-left: 5px;
 }
 
 .input-labels {
@@ -318,10 +302,6 @@ a:hover {
   left: 30%;
 }
 
-.edit-listing-form {
-  position: relative;
-  right: 10%;
-}
 
 .rental {
   position: relative;
@@ -342,61 +322,27 @@ a:hover {
   flex-direction: column;
 }
 
-.image-selection {
+.edit-listing-form {
   display: flex;
-  flex-direction: row;
-  position: relative;
-  left: 100%;
-  bottom: 20%;
+  flex-direction: column;
+  align-items: center;
 }
-
-.agent-image-selection {
-  position: relative;
-  right: 35%;
-}
-
-.edit-agent-img {
-  border: solid black 1px;
-  position: relative;
-  left: 20px;
-}
-
-.agent-name-email {
+.edit-listing-form > div {
+  width: 50%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 0.5rem 0;
+  align-items: baseline;
 }
-
-.agent-img-info {
-  display: flex;
-  flex-direction: row;
+.edit-listing-form > div > label {
+  width: 50%;
 }
-
-.agent-text-area {
-  position: relative;
-  left: 10%;
-  width: 1000px;
+.edit-listing-form > div > input {
+  width: 50%;
 }
-
-/* .img-submit {
-  position: relative;
-  right: 5%;
-} */
-
-.agent-contact {
-  position: relative;
-  right: 44%;
+.price {
+  width:30% !important;
 }
-
-.edit-address-img {
-  height: 150px;
-  width: 200px;
-  position: relative;
-  top: 0.3%;
-  left: 110%;
-  bottom: 30px;
+.rental {
+  width: 20% !important;
 }
-
-/* .el-img-submit {
-  position: relative;
-  right: 15%;
-} */
