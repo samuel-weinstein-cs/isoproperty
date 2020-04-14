@@ -11,33 +11,35 @@ class EditListingsForm extends Component {
     super(props);
 
     this.fileInput = React.createRef();
-    this.state = {};
+    this.state = {
+      fields:{},
+      images:[],
+    };
   }
 
   async componentDidMount() {
     const listingData = await getSingleListing(this.props.id);
-    this.setState(listingData);
+    this.setState({fields:listingData});
   }
 
   handleChange = (e) => {
     const {name, value, type, checked} = e.target;
-    let newState;
+    let fields=this.state.fields;
+    let newField;
     if(type==="checkbox"){
-      newState={
-        [name]: checked
-      }
+      newField = checked
     } else {
-      newState={
-        [name]: value
-      }
+      newField = value
     }
-    console.log({...this.state, ...newState});
-    this.setState(newState)
+    fields[name]=newField;
+    this.setState({
+      fields
+    })
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    await putListing(this.props.id, this.state);
+    await putListing(this.props.id, this.state.fields);
   }
 
   handleFileUpload = async (e) => {
