@@ -326,4 +326,24 @@ a:hover {
 .edit-listing-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.edit-listing-form > div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0.5rem 0;
+  align-items: baseline;
+}
+.edit-listing-form > div > label {
+  width: 50%;
+}
+.edit-listing-form > div > input {
+  width: 50%;
+}
+.price {
+  width:30% !important;
+}
+.rental {
+  width: 20% !important;
 }

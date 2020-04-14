@@ -89,24 +89,28 @@ class EditListingsForm extends Component {
               value={this.state.zip}
               />
           </div>
-          <div>
+          <div className="price-input">
             <label htmlFor="price">Price:</label>
             <input
-              className="edit-input"
+              className="edit-input price"
               type="text"
               name="price"
               placeholder="price"
               onChange={this.handleChange}
               value={this.state.price}
               />
-            <label htmlFor="rental">Rental:</label>
-            <input
-              type="checkbox"
-              name="rental"
-              onChange={this.handleChange}
-              checked={this.state.rental}
-              />
+
+            <div className="rental">
+              <label htmlFor="rental">Rental:</label>
+              <input
+                type="checkbox"
+                name="rental"
+                onChange={this.handleChange}
+                checked={this.state.rental}
+                />
+            </div>
           </div>
+
           <div>
             <label htmlFor="size">Size (ft²):</label>
             <input
@@ -150,6 +154,7 @@ class EditListingsForm extends Component {
               value={this.state.description}
               />
           </div>
+          <input type="submit" className="submit" value="Save Listing" />
         </form>
         <form className="image-selection">
           <label htmlFor="img">Select image: </label>
