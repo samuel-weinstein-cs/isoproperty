@@ -4,6 +4,7 @@ import {
   postListing,
   putListing,
   postImage,
+  getListingImages,
 } from "../services/api_helper";
 
 class EditListingsForm extends Component {
@@ -18,8 +19,15 @@ class EditListingsForm extends Component {
   }
 
   async componentDidMount() {
-    const listingData = await getSingleListing(this.props.id);
-    this.setState({fields:listingData});
+    const [listingData, imageData] = await Promise.all([
+      getSingleListing(this.props.id),
+      getListingImages(this.props.id),
+    ])
+    const images = imageData.map(image => image.url)
+    this.setState({
+      fields:listingData,
+      images,
+    });
   }
 
   handleChange = (e) => {
@@ -188,6 +196,11 @@ class EditListingsForm extends Component {
             />
           <input type="submit" />
         </form>
+        <div className='listings-form-images'>
+          {this.state.images.map((image, key) => (
+            <img src={image} />
+          ))}
+        </div>
       </div>
     );
   }
