@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import {getSingleListing, postListing, putListing} from "../services/api_helper";
+import {
+  getSingleListing,
+  postListing,
+  putListing,
+  postImage,
+} from "../services/api_helper";
 
 class EditListingsForm extends Component {
   constructor(props) {
     super(props);
 
+    this.fileInput = React.createRef();
     this.state = {};
   }
 
@@ -33,6 +39,15 @@ class EditListingsForm extends Component {
     e.preventDefault();
     await putListing(this.props.id, this.state);
   }
+
+  handleFileUpload = async (e) => {
+      e.preventDefault();
+      const id=this.props.id;
+      const file=this.fileInput.current.files[0];
+      console.log(file);
+      const resp = await postImage(id,file);
+      console.log(resp);
+    }
 
   render() {
     return (
@@ -160,10 +175,15 @@ class EditListingsForm extends Component {
           </div>
           <input type="submit" className="submit" value="Save Listing" />
         </form>
-        <form className="image-selection">
+        <form className="image-selection" onSubmit={this.handleFileUpload}>
           <label htmlFor="img">Select image: </label>
           <input
-            type="file" id="img" name="img" accept="image/*" />
+            type="file"
+            id="img"
+            name="img"
+            accept="image/*"
+            ref={this.fileInput}
+            />
           <input type="submit" />
         </form>
       </div>
