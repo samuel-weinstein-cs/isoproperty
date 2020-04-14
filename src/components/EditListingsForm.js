@@ -29,11 +29,15 @@ class EditListingsForm extends Component {
     this.setState(newState)
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    putListing(this.props.id, this.state);
+  }
 
   render() {
     return (
       <div className="edit-single-listing">
-        <form className="edit-listing-form">
+        <form className="edit-listing-form" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="address">Address:</label>
             <input
