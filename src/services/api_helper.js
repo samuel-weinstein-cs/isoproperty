@@ -41,6 +41,11 @@ export const postImage = async (listingId, file) => {
   return signedResponse;
 }
 
+export const getListingImages = async (listingId) => {
+  const resp = await api.get(`/listings/${listingId}/image/`);
+  return resp.data.images;
+}
+
 export const loginUser = async (loginData) => {
   const resp = await api.post('/agents/login', loginData);
   console.log(resp);
