@@ -56,6 +56,9 @@ class EditListingsForm extends Component {
       const file=this.fileInput.current.files[0];
       console.log(file);
       const resp = await postImage(id,file);
+      this.setState({
+        images:[...this.state.images, resp.image.url]
+      })
       console.log(resp);
     }
 
@@ -198,7 +201,7 @@ class EditListingsForm extends Component {
         </form>
         <div className='listings-form-images'>
           {this.state.images.map((image, key) => (
-            <img src={image} />
+            <img src={image} key={key}/>
           ))}
         </div>
       </div>

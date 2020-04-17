@@ -38,7 +38,7 @@ export const postImage = async (listingId, file) => {
   }
   await axios.put(signedResponse.data.request, file, options);
   console.log("File Uploaded");
-  return signedResponse;
+  return signedResponse.data;
 }
 
 export const getListingImages = async (listingId) => {
