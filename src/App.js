@@ -59,19 +59,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
-          <div className="header-flex">
-            <img
-              className="isoprop-logo"
-              src="http://isoproperty.com/iso_images/iso_header_1.png"
-              alt="logo"
-            />
-            <img
-              className="logo-extension"
-              src="https://i.imgur.com/68PXtH6.png"
-              alt="logo extension"
-            />
-          </div>
-
+          <Header />
           <main>
             <Switch>
               <Route path="/admin">
@@ -90,7 +78,6 @@ class App extends Component {
                 <EditAgents />
               </Route>
               <Route exact path="/">
-                <Header />
                 <Home />
               </Route>
               <Route
@@ -104,11 +91,9 @@ class App extends Component {
                 render={props => <SingleListing id={props.match.params.id} />}
               />
               <Route path="/listings">
-                <Header />
                 <Listings />
               </Route>
               <Route path="/about">
-                <Header />
                 <About />
               </Route>
             </Switch>
