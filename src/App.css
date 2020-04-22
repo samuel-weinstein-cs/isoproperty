@@ -347,3 +347,13 @@ a:hover {
 .rental {
   width: 20% !important;
 }
+.listings-form-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.listings-form-images img {
+  object-fit: contain;
+  width: 25%;
+  max-height: 30vh;
+}
