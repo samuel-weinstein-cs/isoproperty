@@ -215,25 +215,40 @@ a:hover {
 }
 
 .prop-details {
+  margin-top: 50px;
+  text-align: left;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.prop-details span {
+/* .prop-details span {
   margin-top: 45px;
+} */
+
+/* .single-listing {
+  margin-top: 10%;
 }
 
 .single-listing-info {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
+} */
 
-.single-prop-img {
+/* .single-prop-img {
   width: 700px;
   height: 400px;
+} */
+
+.info-left {
+  display: flex;
+  flex-direction: column
+}
+
+.info-right {
+  display: flex;
+  flex-direction: column
 }
 
 .header-flex {
@@ -393,3 +408,13 @@ a:hover {
 .listings h1 {
   letter-spacing: 5px;
 }
+/* 
+.single-listing-carousel {
+  width: 700px;
+  position: relative;
+}
+
+.single-listing-carousel-images {
+  width: calc(100%);
+  height: 400px;
+} */

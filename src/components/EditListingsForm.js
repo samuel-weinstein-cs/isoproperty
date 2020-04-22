@@ -199,7 +199,7 @@ class EditListingsForm extends Component {
         </form>
         <div className="listings-form-images">
           {this.state.images.map((image, key) => (
-            <img src={image} />
+            <img src={image} alt=""/>
           ))}
         </div>
       </div>
