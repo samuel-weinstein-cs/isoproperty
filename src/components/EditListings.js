@@ -67,12 +67,12 @@ class EditListings extends Component {
               <div className="edit-image">
                 <Link to={`/listings/${listing.id}/edit`}>
                   <img
-                    className="address-img"
+                    className="edit-address-img"
                     src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
                     alt="address"
                   />
                 </Link>
-                </div>
+              </div>
             </div>
           </div>
         ))}

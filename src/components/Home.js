@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
     return(
-  <div>
+  <div className="home">
     <h1 className="home-header"><i>
       Offering high standards of service on all aspects of the residential sales
       market.

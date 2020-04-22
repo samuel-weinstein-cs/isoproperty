@@ -9,7 +9,7 @@ function Footer() {
         Phone 212.252.2704 (7days/week)<br></br>
         <b className="email">contact@isoproperty.com</b><br></br></p>
         <div className="upper-contact"></div>
-        <p>copyright© 2004-2006 iso property corp All rights reserved</p>
+        <p>copyright© 2020 iso property corp All rights reserved</p>
         </div>
     )
 }

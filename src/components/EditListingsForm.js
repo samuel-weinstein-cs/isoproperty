@@ -4,7 +4,7 @@ import {
   postListing,
   putListing,
   postImage,
-  getListingImages,
+  getListingImages
 } from "../services/api_helper";
 
 class EditListingsForm extends Component {
@@ -13,42 +13,42 @@ class EditListingsForm extends Component {
 
     this.fileInput = React.createRef();
     this.state = {
-      fields:{},
-      images:[],
+      fields: {},
+      images: []
     };
   }
 
   async componentDidMount() {
     const [listingData, imageData] = await Promise.all([
       getSingleListing(this.props.id),
-      getListingImages(this.props.id),
-    ])
-    const images = imageData.map(image => image.url)
+      getListingImages(this.props.id)
+    ]);
+    const images = imageData.map(image => image.url);
     this.setState({
-      fields:listingData,
-      images,
+      fields: listingData,
+      images
     });
   }
 
-  handleChange = (e) => {
-    const {name, value, type, checked} = e.target;
-    let fields=this.state.fields;
+  handleChange = e => {
+    const { name, value, type, checked } = e.target;
+    let fields = this.state.fields;
     let newField;
-    if(type==="checkbox"){
-      newField = checked
+    if (type === "checkbox") {
+      newField = checked;
     } else {
-      newField = value
+      newField = value;
     }
-    fields[name]=newField;
+    fields[name] = newField;
     this.setState({
       fields
-    })
-  }
+    });
+  };
 
-  handleSubmit = async (e) => {
+  handleSubmit = async e => {
     e.preventDefault();
     await putListing(this.props.id, this.state.fields);
-  }
+  };
 
   handleFileUpload = async (e) => {
       e.preventDefault();
@@ -74,8 +74,8 @@ class EditListingsForm extends Component {
               name="address"
               placeholder="address"
               onChange={this.handleChange}
-              value={this.state.fields.address||""}
-              />
+              value={this.state.fields.address || ""}
+            />
           </div>
           <div>
             <label htmlFor="address2">Address Line 2:</label>
@@ -85,8 +85,8 @@ class EditListingsForm extends Component {
               name="address2"
               placeholder="address 2"
               onChange={this.handleChange}
-              value={this.state.fields.address2||""}
-              />
+              value={this.state.fields.address2 || ""}
+            />
           </div>
           <div>
             <label htmlFor="state">State:</label>
@@ -96,8 +96,8 @@ class EditListingsForm extends Component {
               name="state"
               placeholder="state"
               onChange={this.handleChange}
-              value={this.state.fields.state||""}
-              />
+              value={this.state.fields.state || ""}
+            />
           </div>
           <div>
             <label htmlFor="city">City:</label>
@@ -107,8 +107,8 @@ class EditListingsForm extends Component {
               name="city"
               placeholder="city"
               onChange={this.handleChange}
-              value={this.state.fields.city||""}
-              />
+              value={this.state.fields.city || ""}
+            />
           </div>
           <div>
             <label htmlFor="zip">Zip Code:</label>
@@ -118,8 +118,8 @@ class EditListingsForm extends Component {
               name="zip"
               placeholder="zip"
               onChange={this.handleChange}
-              value={this.state.fields.zip||""}
-              />
+              value={this.state.fields.zip || ""}
+            />
           </div>
           <div className="price-input">
             <label htmlFor="price">Price:</label>
@@ -129,8 +129,8 @@ class EditListingsForm extends Component {
               name="price"
               placeholder="price"
               onChange={this.handleChange}
-              value={this.state.fields.price||""}
-              />
+              value={this.state.fields.price || ""}
+            />
 
             <div className="rental">
               <label htmlFor="rental">Rental:</label>
@@ -138,8 +138,8 @@ class EditListingsForm extends Component {
                 type="checkbox"
                 name="rental"
                 onChange={this.handleChange}
-                checked={this.state.fields.rental||""}
-                />
+                checked={this.state.fields.rental || ""}
+              />
             </div>
           </div>
 
@@ -147,11 +147,12 @@ class EditListingsForm extends Component {
             <label htmlFor="size">Size (ft²):</label>
             <input
               className="edit-input"
-              type="text" name="size"
+              type="text"
+              name="size"
               placeholder="size"
               onChange={this.handleChange}
-              value={this.state.fields.size||false}
-              />
+              value={this.state.fields.size || false}
+            />
           </div>
           <div>
             <label htmlFor="bedrooms">Bedrooms:</label>
@@ -161,8 +162,8 @@ class EditListingsForm extends Component {
               name="bedrooms"
               placeholder="bedrooms"
               onChange={this.handleChange}
-              value={this.state.fields.bedrooms||""}
-              />
+              value={this.state.fields.bedrooms || ""}
+            />
           </div>
           <div>
             <label htmlFor="neighborhood">Neighborhood:</label>
@@ -172,8 +173,8 @@ class EditListingsForm extends Component {
               name="neighborhood"
               placeholder="neighborhood"
               onChange={this.handleChange}
-              value={this.state.fields.neighborhood||""}
-              />
+              value={this.state.fields.neighborhood || ""}
+            />
           </div>
           <div>
             <label htmlFor="description">Description:</label>
@@ -183,8 +184,8 @@ class EditListingsForm extends Component {
               name="description"
               placeholder="description"
               onChange={this.handleChange}
-              value={this.state.fields.description||""}
-              />
+              value={this.state.fields.description || ""}
+            />
           </div>
           <input type="submit" className="submit" value="Save Listing" />
         </form>
@@ -196,10 +197,10 @@ class EditListingsForm extends Component {
             name="img"
             accept="image/*"
             ref={this.fileInput}
-            />
-          <input type="submit" />
+          />
+          <input className="img-input" type="submit" />
         </form>
-        <div className='listings-form-images'>
+        <div className="listings-form-images">
           {this.state.images.map((image, key) => (
             <img src={image} key={key}/>
           ))}

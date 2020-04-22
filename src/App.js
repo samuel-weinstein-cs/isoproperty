@@ -15,6 +15,7 @@ import EditListings from "./components/EditListings.js";
 import AdminHeader from "./components/AdminHeader";
 import EditAbout from "./components/EditAbout";
 import EditListingsForm from "./components/EditListingsForm";
+import EditAgents from "./components/EditAgents";
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
     };
   }
 
-  handleLogin = async (loginData) => {
+  handleLogin = async loginData => {
     const currentUser = await loginUser(loginData);
     this.setState({ currentUser });
   };
@@ -64,15 +65,17 @@ class App extends Component {
               src="http://isoproperty.com/iso_images/iso_header_1.png"
               alt="logo"
             />
-            <h1 className="web-name">
-              <span className="iso-box">Iso</span> Property Corp
-            </h1>
+            <img
+              className="logo-extension"
+              src="https://i.imgur.com/68PXtH6.png"
+              alt="logo extension"
+            />
           </div>
 
           <main>
             <Switch>
               <Route path="/admin">
-                <Admin handleLogin={this.handleLogin}/>
+                <Admin handleLogin={this.handleLogin} />
               </Route>
               <Route path="/edit-listings">
                 <AdminHeader />
@@ -84,6 +87,7 @@ class App extends Component {
               </Route>
               <Route path="/edit-agents">
                 <AdminHeader />
+                <EditAgents />
               </Route>
               <Route exact path="/">
                 <Header />
@@ -91,8 +95,10 @@ class App extends Component {
               </Route>
               <Route
                 path="/listings/:id/edit"
-                render={props => <EditListingsForm id={props.match.params.id} />}
-                />
+                render={props => (
+                  <EditListingsForm id={props.match.params.id} />
+                )}
+              />
               <Route
                 path="/listings/:id"
                 render={props => <SingleListing id={props.match.params.id} />}
