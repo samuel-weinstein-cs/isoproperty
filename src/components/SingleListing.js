@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getSingleListing } from "../services/api_helper";
+import Carousel from './Carousel';
 
 class SingleListing extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class SingleListing extends Component {
             {`${this.state.singleListing.address}${this.state.singleListing.address2}, ${this.state.singleListing.city}, ${this.state.singleListing.state} ${this.state.singleListing.zip}`}
           </b>
         </h2>
+        <Carousel/>
         <div className="single-listing-info">
         <p className="prop-details">
           <span><b>Price:</b> {`$${this.state.singleListing.price} ${this.state.singleListing.rental&&`per month`}`}</span>
@@ -36,8 +38,9 @@ class SingleListing extends Component {
           <span><b>Bedrooms:</b> {this.state.singleListing.bedrooms}</span>
           <span><b>Neighborhood:</b> {this.state.singleListing.neighborhood}</span>
           <span><b>Description:</b> {this.state.singleListing.description}</span>
+          </div>
         </p>
-        <img className="single-prop-img" src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg" alt="single-listing" />
+        {/* <img className="single-prop-img" src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg" alt="single-listing" /> */}
         </div>
       </div>
     );

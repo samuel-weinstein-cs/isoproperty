@@ -215,25 +215,29 @@ a:hover {
 }
 
 .prop-details {
+  margin-top: 50px;
+  text-align: left;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .prop-details span {
-  margin-top: 45px;
+  margin-top: 30px;
 }
 
-.single-listing-info {
+.single-listing {
+  margin-top: 10%;
+}
+
+.info-left {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column
 }
 
-.single-prop-img {
-  width: 700px;
-  height: 400px;
+.info-right {
+  display: flex;
+  flex-direction: column
 }
 
 .header-flex {
@@ -402,4 +406,37 @@ a:hover {
 
 .listings h1 {
   letter-spacing: 5px;
+}
+
+.single-listing-carousel-images {
+  width: 700px;
+  height: 400px;
+}
+
+.tns-controls button {
+  margin-left: 22%;
+  margin-right: 22%;
+  position: relative;
+  top: 260px;
+  z-index: 100;
+  opacity: 0.7;
+  height: 50px;
+}
+
+.tns-nav button:hover {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 25%;
+}
+
+.tns-nav button::selection {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.tns-nav-active {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
 }
