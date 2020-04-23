@@ -222,24 +222,13 @@ a:hover {
   justify-content: space-evenly;
 }
 
-/* .prop-details span {
-  margin-top: 45px;
-} */
-
-/* .single-listing {
-  margin-top: 10%;
+.prop-details span {
+  margin-top: 30px;
 }
 
-.single-listing-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-} */
-
-/* .single-prop-img {
-  width: 700px;
-  height: 400px;
-} */
+.single-listing {
+  margin-top: 10%;
+}
 
 .info-left {
   display: flex;
@@ -408,13 +397,36 @@ a:hover {
 .listings h1 {
   letter-spacing: 5px;
 }
-/* 
-.single-listing-carousel {
-  width: 700px;
-  position: relative;
-}
 
 .single-listing-carousel-images {
-  width: calc(100%);
+  width: 700px;
   height: 400px;
-} */
+}
+
+.tns-controls button {
+  margin-left: 22%;
+  margin-right: 22%;
+  position: relative;
+  top: 260px;
+  z-index: 100;
+  opacity: 0.7;
+  height: 50px;
+}
+
+.tns-nav button:hover {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 25%;
+}
+
+.tns-nav button::selection {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.tns-nav-active {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
+}

@@ -4,7 +4,7 @@ import TinySlider from "tiny-slider-react";
 function Carousel() {
   const settings = {
     lazyload: true,
-    nav: false,
+    nav: true,
     mouseDrag: true,
     controls: true
   };
