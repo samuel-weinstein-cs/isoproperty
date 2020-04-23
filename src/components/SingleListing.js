@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getSingleListing } from "../services/api_helper";
+import { getSingleListing, getListingImages } from "../services/api_helper";
 import Carousel from './Carousel';
 
 class SingleListing extends Component {
@@ -7,17 +7,20 @@ class SingleListing extends Component {
     super(props);
 
     this.state = {
-      singleListing: {},
-      listing: null,
-      currentListing: null,
-      listingId: null
+      listingData: {},
+      images: []
     };
   }
 
   componentDidMount = async () => {
-    const singleListing = await getSingleListing(this.props.id);
+    const [listingData, imageData] = await Promise.all([
+      getSingleListing(this.props.id),
+      getListingImages(this.props.id)
+    ]);
+    const images = imageData.map(image => image.url);
     this.setState({
-      singleListing
+      listingData,
+      images
     });
   };
 
@@ -27,19 +30,18 @@ class SingleListing extends Component {
         <h1>Property Details</h1>
         <h2>
           <b>
-            {`${this.state.singleListing.address}${this.state.singleListing.address2}, ${this.state.singleListing.city}, ${this.state.singleListing.state} ${this.state.singleListing.zip}`}
+            {`${this.state.listingData.address}${this.state.listingData.address2}, ${this.state.listingData.city}, ${this.state.listingData.state} ${this.state.listingData.zip}`}
           </b>
         </h2>
-        <Carousel/>
+        <Carousel images={this.state.images}/>
         <div className="single-listing-info">
-        <p className="prop-details">
-          <span><b>Price:</b> {`$${this.state.singleListing.price} ${this.state.singleListing.rental&&`per month`}`}</span>
-          <span><b>Size:</b> {`${this.state.singleListing.size} sq. ft`}</span>
-          <span><b>Bedrooms:</b> {this.state.singleListing.bedrooms}</span>
-          <span><b>Neighborhood:</b> {this.state.singleListing.neighborhood}</span>
-          <span><b>Description:</b> {this.state.singleListing.description}</span>
+          <div className="prop-details">
+            <p><b>Price:</b> {`$${this.state.listingData.price} ${this.state.listingData.rental&&`per month`}`}</p>
+            <p><b>Size:</b> {`${this.state.listingData.size} sq. ft`}</p>
+            <p><b>Bedrooms:</b> {this.state.listingData.bedrooms}</p>
+            <p><b>Neighborhood:</b> {this.state.listingData.neighborhood}</p>
+            <p><b>Description:</b> {this.state.listingData.description}</p>
           </div>
-        </p>
         {/* <img className="single-prop-img" src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg" alt="single-listing" /> */}
         </div>
       </div>
