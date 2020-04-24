@@ -33,7 +33,7 @@ class SingleListing extends Component {
             {`${this.state.listingData.address}${this.state.listingData.address2}, ${this.state.listingData.city}, ${this.state.listingData.state} ${this.state.listingData.zip}`}
           </b>
         </h2>
-        <Carousel images={this.state.images}/>
+
         <div className="single-listing-info">
           <div className="prop-details">
             <p><b>Price:</b> {`$${this.state.listingData.price} ${this.state.listingData.rental&&`per month`}`}</p>
@@ -44,6 +44,7 @@ class SingleListing extends Component {
           </div>
         {/* <img className="single-prop-img" src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg" alt="single-listing" /> */}
         </div>
+        <Carousel images={this.state.images}/>
       </div>
     );
   }

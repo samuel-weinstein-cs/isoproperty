@@ -8,6 +8,8 @@ function Carousel(props) {
     controls: true,
     autoWidth: true,
     gutter: 10,
+    center: true,
+    container: "#center",
   };
 
   const loadingImage =

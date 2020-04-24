@@ -6,6 +6,8 @@ import {
   postImage,
   getListingImages
 } from "../services/api_helper";
+import Carousel from './Carousel';
+
 
 class EditListingsForm extends Component {
   constructor(props) {
@@ -14,7 +16,8 @@ class EditListingsForm extends Component {
     this.fileInput = React.createRef();
     this.state = {
       listingData: {},
-      images: []
+      images: [],
+      fileName: "Select Image",
     };
   }
 
@@ -51,16 +54,24 @@ class EditListingsForm extends Component {
   };
 
   handleFileUpload = async (e) => {
-      e.preventDefault();
-      const id=this.props.id;
-      const file=this.fileInput.current.files[0];
-      console.log(file);
-      const resp = await postImage(id,file);
+    e.preventDefault();
+    const id=this.props.id;
+    const file=this.fileInput.current.files[0];
+    console.log(file);
+    const resp = await postImage(id,file);
+    this.setState({
+      images:[...this.state.images, resp.image.url]
+    })
+    console.log(resp);
+  }
+
+  updateFileName = e => {
+    if(this.fileInput.current && this.fileInput.current.files.length>0) {
       this.setState({
-        images:[...this.state.images, resp.image.url]
+        fileName: this.fileInput.current.files[0].name,
       })
-      console.log(resp);
     }
+  }
 
   render() {
     return (
@@ -190,21 +201,22 @@ class EditListingsForm extends Component {
           <input type="submit" className="submit" value="Save Listing" />
         </form>
         <form className="image-selection" onSubmit={this.handleFileUpload}>
-          <label htmlFor="img">Select image: </label>
-          <input
-            type="file"
-            id="img"
-            name="img"
-            accept="image/*"
-            ref={this.fileInput}
-          />
-          <input className="img-input" type="submit" />
+          <label htmlFor="img" className="submit">
+            {this.state.fileName}
+            <input
+              onChange={this.updateFileName}
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+              className="submit"
+              ref={this.fileInput}
+              />
+          </label>
+
+          <input className="submit" type="submit" value="Upload File" />
         </form>
-        <div className="listings-form-images">
-          {this.state.images.map((image, key) => (
-            <img src={image} key={key}/>
-          ))}
-        </div>
+        <Carousel images={this.state.images} />
       </div>
     );
   }

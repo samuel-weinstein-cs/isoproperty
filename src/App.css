@@ -113,20 +113,17 @@ a:hover {
 
 .submit {
   color: white;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100px;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 1rem;
   /* height: 30px; */
   background-color: #009999;
 }
 
 .submit:hover {
   color: #009999;
-  width: 100px;
-  height: 30px;
-  padding: 10px;
   background-color: white;
-  border-radius: 0;
 }
 
 .email-input {
@@ -364,32 +361,6 @@ a:hover {
 .rental {
   width: 20% !important;
 }
-.listings-form-images {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-.listings-form-images img {
-  object-fit: contain;
-  width: 25%;
-  max-height: 30vh;
-}
-
-.img-input {
-  color: white;
-  /* width: 100px; */
-  /* height: 30px; */
-  background-color: #009999;
-}
-
-.img-input:hover {
-  color: #009999;
-  /* width: 100px;
-  height: 30px;
-  padding: 10px; */
-  background-color: white;
-  border-radius: 0;
-}
 
 .file {
   background-color: #009999;
@@ -428,6 +399,7 @@ a:hover {
 .tns-nav button{
   height: 15px;
   border-radius: 50%;
+  outline: none;
 }
 .tns-nav button:hover {
   background-color: #009999;
@@ -441,4 +413,8 @@ a:hover {
   background-color: #009999;
   height: 15px;
   border-radius: 50%;
+}
+
+input[type="file"] {
+    display: none;
 }
