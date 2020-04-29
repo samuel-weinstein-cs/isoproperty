@@ -11,10 +11,10 @@ function Carousel(props) {
     center: true,
     container: "#center",
   };
+  console.log(props);
 
   const loadingImage =
     "data:image/gif;base64, R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==";
-
   return (
     <div>
 

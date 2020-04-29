@@ -57,12 +57,14 @@ class EditListingsForm extends Component {
     e.preventDefault();
     const id=this.props.id;
     const file=this.fileInput.current.files[0];
-    console.log(file);
-    const resp = await postImage(id,file);
-    this.setState({
-      images:[...this.state.images, resp.image.url]
-    })
-    console.log(resp);
+    if(file){
+      const resp = await postImage(id,file);
+      this.setState(prevState => ({
+        images:[...prevState.images, resp.image.url]
+      }))
+    } else {
+      alert("Please select a file!")
+    }
   }
 
   updateFileName = e => {
