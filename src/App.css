@@ -415,6 +415,10 @@ a:hover {
   border-radius: 50%;
 }
 
+.tns-nav, .tns-controls {
+  display:block !important;
+}
+
 input[type="file"] {
     display: none;
 }
