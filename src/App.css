@@ -15,17 +15,16 @@
   height: 100px;
 }
 
+.header {
+  text-align: left;
+  position: relative;
+}
+
 .header-link {
   list-style-type: none;
   font-size: 15px;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 10%;
-}
 
 .iso-box {
   color: white;
@@ -46,16 +45,11 @@
 a {
   text-decoration: none;
   color: #009999;
-  margin-left: 10%;
 }
 
 .header-link,
 a:hover {
   color: grey;
-}
-
-.nav-list {
-  margin-right: 30%;
 }
 
 .about-p {
@@ -107,8 +101,7 @@ a:hover {
 
 .upper-contact {
   border-bottom: solid grey 1px;
-  width: 200px;
-  margin-left: 43%;
+  width: 100vw;
 }
 
 .submit {
@@ -223,10 +216,6 @@ a:hover {
   margin-top: 30px;
 }
 
-.single-listing {
-  margin-top: 10%;
-}
-
 .info-left {
   display: flex;
   flex-direction: column
@@ -248,16 +237,30 @@ a:hover {
   position: relative;
 }
 
-.header-nav{
+.header-nav {
   position: absolute;
-  margin-top: 0;
+  overflow: hidden;
+  top: calc( 18000vw / 636 * (251 - 1) / 400 );
+  left: calc( 45vw * (317 - 1) /636 );
+  border-top-width: calc( 18000vw / 636 * 2 / 400 );
+  border-top-color: #a1a1a1;
+  border-top-style: outset;
+  width: calc(100vw - ( 45vw * (317 - 1) /636 ));
+
 }
 
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
 
 .isoprop-logo {
-  /* width: 30%; */
-  min-width: 30%;
-  max-width: 80%;
+  width: 45vw;
+  /*! min-width: 30%; */
+  /*! max-width: 80%; */
 }
 
 
