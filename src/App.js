@@ -59,18 +59,6 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
-        <div className="header-flex">
-        <img
-          className="isoprop-logo"
-          src="http://isoproperty.com/iso_images/iso_header_1.png"
-          alt="logo"
-        />
-        <img
-          className="logo-extension"
-          src="https://i.imgur.com/68PXtH6.png"
-          alt="logo extension"
-        />
-        </div>
           <main>
             <Switch>
               <Route path="/admin">
