@@ -6,7 +6,11 @@ function Carousel() {
     lazyload: true,
     nav: true,
     mouseDrag: true,
-    controls: true
+    controls: true,
+    gutter: 10,
+    center: true,
+    container: "#center",
+    lazyload: true
   };
 
   const imgs = [

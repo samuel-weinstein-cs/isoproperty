@@ -24,7 +24,9 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-left: 10%;
+  position: relative;
+  left: 30%;
+  top: 30%;
 }
 
 .iso-box {
@@ -272,10 +274,6 @@ a:hover {
   margin-top: 6%;
 }
 
-.header {
-  margin-top: 6%;
-}
-
 .about-input{
   width: 500px;
   height: 300px;
@@ -429,4 +427,53 @@ a:hover {
   background-color: #009999;
   height: 15px;
   border-radius: 50%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.single-listing-carousel-images {
+  width: 700px;
+  height: 400px;
+}
+
+.tns-controls button {
+  margin-left: 22%;
+  margin-right: 22%;
+  position: relative;
+  top: 260px;
+  z-index: 100;
+  height: 50px;
+}
+
+.tns-nav button:hover {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 25%;
+}
+
+.tns-nav button::selection {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.tns-nav-active {
+  background-color: #009999;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  line-height: 0;
+  padding: 0;
+}
+
+.header-nav {
+  margin-top: 100px;
+  position: relative;
+  right: 20%;
 }

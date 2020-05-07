@@ -50,14 +50,26 @@ class EditListingsForm extends Component {
     await putListing(this.props.id, this.state.fields);
   };
 
-  handleFileUpload = async e => {
-    e.preventDefault();
-    const id = this.props.id;
-    const file = this.fileInput.current.files[0];
-    console.log(file);
-    const resp = await postImage(id, file);
-    console.log(resp);
-  };
+  handleFileUpload = async () => {
+    const id=this.props.id;
+    const file=this.fileInput.current.files[0];
+    if(file){
+      const resp = await postImage(id,file);
+      this.setState(prevState => ({
+        images:[...prevState.images, resp.image.url]
+      }))
+    } else {
+      alert("Please select a file!")
+    }
+  }
+
+  updateFileName = e => {
+    if(this.fileInput.current && this.fileInput.current.files.length>0) {
+      this.setState({
+        fileName: this.fileInput.current.files[0].name,
+      })
+    }
+  }
 
   render() {
     return (
