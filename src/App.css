@@ -243,13 +243,23 @@ a:hover {
   height: 100px;
 }
 
-.isoprop-logo {
-  z-index: 10;
+.header img{
+  text-align: left;
   position: relative;
-  right: 260px;
-  height: 291px;
-  width: 250px;
 }
+
+.header-nav{
+  position: absolute;
+  margin-top: 0;
+}
+
+
+.isoprop-logo {
+  /* width: 30%; */
+  min-width: 30%;
+  max-width: 80%;
+}
+
 
 .admin-nav-list {
   display: flex;
@@ -269,9 +279,7 @@ a:hover {
   margin-top: 6%;
 }
 
-.header {
-  margin-top: 6%;
-}
+
 
 .about-input{
   width: 500px;
