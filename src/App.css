@@ -11,10 +11,6 @@
   min-height: calc(100vh - 150px);
 }
 
-.contact {
-  height: 100px;
-}
-
 .header {
   text-align: left;
   position: relative;
@@ -22,7 +18,7 @@
 
 .header-link {
   list-style-type: none;
-  font-size: 15px;
+  font-size: 1vw;
 }
 
 
@@ -92,16 +88,36 @@ a:hover {
 }
 
 .license {
-  color: rgb(50, 50, 50);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+  color: black;
 }
 
 .email {
   color: #009999;
+  font-weight: bold;
+}
+
+.contact {
+  text-align: center;
+  font-size: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .upper-contact {
+  color: rgb(102, 102, 102);
   border-bottom: solid grey 1px;
-  width: 100vw;
+  line-height: 2px;
+  padding-bottom: 10px;
+  width: 50vw;
 }
 
 .submit {
