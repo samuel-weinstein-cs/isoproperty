@@ -14,11 +14,12 @@
 .header {
   text-align: left;
   position: relative;
+  overflow: hidden;
 }
 
 .header-link {
   list-style-type: none;
-  font-size: 1vw;
+  font-size: 2vw;
 }
 
 
