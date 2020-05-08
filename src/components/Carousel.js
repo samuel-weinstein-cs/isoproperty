@@ -9,8 +9,7 @@ function Carousel() {
     controls: true,
     gutter: 10,
     center: true,
-    container: "#center",
-    lazyload: true
+    container: "#center"
   };
 
   const imgs = [

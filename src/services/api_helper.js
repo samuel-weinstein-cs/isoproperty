@@ -6,7 +6,7 @@ const api = axios.create({
 
 export const getListings = async () => {
     const resp = await api.get('/listings');
-    return resp.data;
+    return resp.data.listings;
   }
 
 export const getSingleListing = async (id) => {
