@@ -19,7 +19,7 @@
 
 .header-link {
   list-style-type: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 
@@ -449,14 +449,8 @@ input[type="file"] {
     display: none;
 }
 
-.single-listing-carousel-images {
-  width: 700px;
-  height: 400px;
-}
-
 .tns-controls button {
-  margin-left: 22%;
-  margin-right: 22%;
+  margin: 0 25vw;
   position: relative;
   top: 260px;
   z-index: 100;
@@ -486,10 +480,4 @@ input[type="file"] {
   flex-direction: row;
   line-height: 0;
   padding: 0;
-}
-
-.header-nav {
-  margin-top: 100px;
-  position: relative;
-  right: 20%;
 }
