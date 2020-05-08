@@ -33,13 +33,13 @@ class Listings extends Component {
         </div>
         {this.state.listings.map((listing, index) => (
           <div className="listing" key={index}>
-              <Link to={`/listings/${listing.id}`}>
-            <p className="listing-title">
-              <b>
-                {listing.address} {listing.address2} {listing.state}{" "}
-                {listing.city} {listing.zip}
-              </b>
-            </p>
+            <Link to={`/listings/${listing.id}`}>
+              <p className="listing-title">
+                <b>
+                  {listing.address} {listing.address2} {listing.state}{" "}
+                  {listing.city} {listing.zip}
+                </b>
+              </p>
             </Link>
             <div className="listing-flex-container">
               <div className="listing-flex-left">

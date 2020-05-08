@@ -6,7 +6,7 @@ const api = axios.create({
 
 export const getListings = async () => {
     const resp = await api.get('/listings');
-    return resp.data;
+    return resp.data.listings;
   }
 
 export const getSingleListing = async (id) => {
@@ -38,7 +38,7 @@ export const postImage = async (listingId, file) => {
   }
   await axios.put(signedResponse.data.request, file, options);
   console.log("File Uploaded");
-  return signedResponse;
+  return signedResponse.data;
 }
 
 export const getListingImages = async (listingId) => {
