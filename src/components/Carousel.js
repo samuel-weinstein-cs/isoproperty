@@ -5,7 +5,7 @@ function Carousel(props) {
   const settings = {
     nav: true,
     mouseDrag: true,
-    controls: true, 
+    controls: true,
     autoWidth: true,
     gutter: 10,
     center: true,

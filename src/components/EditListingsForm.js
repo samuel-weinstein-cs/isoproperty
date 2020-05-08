@@ -53,8 +53,7 @@ class EditListingsForm extends Component {
     await putListing(this.props.id, this.state.listingData);
   };
 
-  handleFileUpload = async (e) => {
-    e.preventDefault();
+  handleFileUpload = async () => {
     const id=this.props.id;
     const file=this.fileInput.current.files[0];
     if(file){
