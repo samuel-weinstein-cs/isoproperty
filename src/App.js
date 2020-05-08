@@ -59,6 +59,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
+          <Header />
           <main>
             <Switch>
               <Route path="/admin">
@@ -77,7 +78,6 @@ class App extends Component {
                 <EditAgents />
               </Route>
               <Route exact path="/">
-                <Header />
                 <Home />
               </Route>
               <Route
@@ -91,11 +91,9 @@ class App extends Component {
                 render={props => <SingleListing id={props.match.params.id} />}
               />
               <Route path="/listings">
-                <Header />
                 <Listings />
               </Route>
               <Route path="/about">
-                <Header />
                 <About />
               </Route>
             </Switch>

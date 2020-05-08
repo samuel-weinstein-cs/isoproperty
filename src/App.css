@@ -11,23 +11,17 @@
   min-height: calc(100vh - 150px);
 }
 
-.contact {
-  height: 100px;
+.header {
+  text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 
 .header-link {
   list-style-type: none;
-  font-size: 15px;
+  font-size: 2vw;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  position: relative;
-  left: 30%;
-  top: 30%;
-}
 
 .iso-box {
   color: white;
@@ -48,16 +42,11 @@
 a {
   text-decoration: none;
   color: #009999;
-  margin-left: 10%;
 }
 
 .header-link,
 a:hover {
   color: grey;
-}
-
-.nav-list {
-  margin-right: 30%;
 }
 
 .about-p {
@@ -100,35 +89,51 @@ a:hover {
 }
 
 .license {
-  color: rgb(50, 50, 50);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+  color: black;
 }
 
 .email {
   color: #009999;
+  font-weight: bold;
+}
+
+.contact {
+  text-align: center;
+  font-size: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .upper-contact {
+  color: rgb(102, 102, 102);
   border-bottom: solid grey 1px;
-  width: 200px;
-  margin-left: 43%;
+  line-height: 2px;
+  padding-bottom: 10px;
+  width: 50vw;
 }
 
 .submit {
   color: white;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100px;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 1rem;
   /* height: 30px; */
   background-color: #009999;
 }
 
 .submit:hover {
   color: #009999;
-  width: 100px;
-  height: 30px;
-  padding: 10px;
   background-color: white;
-  border-radius: 0;
 }
 
 .email-input {
@@ -218,18 +223,14 @@ a:hover {
 
 .prop-details {
   margin-top: 50px;
-  text-align: left;
-  display: flex;
+  text-align: center;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
 .prop-details span {
   margin-top: 30px;
-}
-
-.single-listing {
-  margin-top: 10%;
 }
 
 .info-left {
@@ -248,13 +249,37 @@ a:hover {
   height: 100px;
 }
 
-.isoprop-logo {
-  z-index: 10;
+.header img{
+  text-align: left;
   position: relative;
-  right: 260px;
-  height: 291px;
-  width: 250px;
 }
+
+.header-nav {
+  position: absolute;
+  overflow: hidden;
+  top: calc( 18000vw / 636 * (251 - 1) / 400 );
+  left: calc( 45vw * (317 - 1) /636 );
+  border-top-width: calc( 18000vw / 636 * 2 / 400 );
+  border-top-color: #a1a1a1;
+  border-top-style: outset;
+  width: calc(100vw - ( 45vw * (317 - 1) /636 ));
+
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.isoprop-logo {
+  width: 45vw;
+  /*! min-width: 30%; */
+  /*! max-width: 80%; */
+}
+
 
 .admin-nav-list {
   display: flex;
@@ -363,22 +388,6 @@ a:hover {
   width: 20% !important;
 }
 
-.img-input {
-  color: white;
-  /* width: 100px; */
-  /* height: 30px; */
-  background-color: #009999;
-}
-
-.img-input:hover {
-  color: #009999;
-  /* width: 100px;
-  height: 30px;
-  padding: 10px; */
-  background-color: white;
-  border-radius: 0;
-}
-
 .file {
   background-color: #009999;
 }
@@ -397,11 +406,13 @@ a:hover {
 }
 
 .single-listing-carousel-images {
-  width: 700px;
+  width: auto;
+  max-width: 100%;
   height: 400px;
+  object-fit: contain;
 }
 
-.tns-controls button {
+/* .tns-controls button {
   margin-left: 22%;
   margin-right: 22%;
   position: relative;
@@ -409,24 +420,29 @@ a:hover {
   z-index: 100;
   opacity: 0.7;
   height: 50px;
-}
+} */
 
+.tns-nav button{
+  height: 15px;
+  border-radius: 50%;
+  outline: none;
+}
 .tns-nav button:hover {
   background-color: #009999;
-  height: 15px;
-  border-radius: 25%;
 }
 
 .tns-nav button::selection {
   background-color: #009999;
-  height: 15px;
-  border-radius: 50%;
 }
 
 .tns-nav-active {
   background-color: #009999;
   height: 15px;
   border-radius: 50%;
+}
+
+.tns-nav, .tns-controls {
+  display:block !important;
 }
 
 input[type="file"] {

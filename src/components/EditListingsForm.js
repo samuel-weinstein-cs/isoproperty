@@ -6,6 +6,8 @@ import {
   postImage,
   getListingImages
 } from "../services/api_helper";
+import Carousel from './Carousel';
+
 
 class EditListingsForm extends Component {
   constructor(props) {
@@ -13,8 +15,9 @@ class EditListingsForm extends Component {
 
     this.fileInput = React.createRef();
     this.state = {
-      fields: {},
-      images: []
+      listingData: {},
+      images: [],
+      fileName: "Select Image",
     };
   }
 
@@ -25,29 +28,29 @@ class EditListingsForm extends Component {
     ]);
     const images = imageData.map(image => image.url);
     this.setState({
-      fields: listingData,
+      listingData,
       images
     });
   }
 
   handleChange = e => {
     const { name, value, type, checked } = e.target;
-    let fields = this.state.fields;
-    let newField;
+    let listingData = this.state.listingData;
+    let newData;
     if (type === "checkbox") {
-      newField = checked;
+      newData = checked;
     } else {
-      newField = value;
+      newData = value;
     }
-    fields[name] = newField;
+    listingData[name] = newData;
     this.setState({
-      fields
+      listingData
     });
   };
 
   handleSubmit = async e => {
     e.preventDefault();
-    await putListing(this.props.id, this.state.fields);
+    await putListing(this.props.id, this.state.listingData);
   };
 
   handleFileUpload = async () => {
@@ -83,7 +86,7 @@ class EditListingsForm extends Component {
               name="address"
               placeholder="address"
               onChange={this.handleChange}
-              value={this.state.fields.address || ""}
+              value={this.state.listingData.address || ""}
             />
           </div>
           <div>
@@ -94,7 +97,7 @@ class EditListingsForm extends Component {
               name="address2"
               placeholder="address 2"
               onChange={this.handleChange}
-              value={this.state.fields.address2 || ""}
+              value={this.state.listingData.address2 || ""}
             />
           </div>
           <div>
@@ -105,7 +108,7 @@ class EditListingsForm extends Component {
               name="state"
               placeholder="state"
               onChange={this.handleChange}
-              value={this.state.fields.state || ""}
+              value={this.state.listingData.state || ""}
             />
           </div>
           <div>
@@ -116,7 +119,7 @@ class EditListingsForm extends Component {
               name="city"
               placeholder="city"
               onChange={this.handleChange}
-              value={this.state.fields.city || ""}
+              value={this.state.listingData.city || ""}
             />
           </div>
           <div>
@@ -127,7 +130,7 @@ class EditListingsForm extends Component {
               name="zip"
               placeholder="zip"
               onChange={this.handleChange}
-              value={this.state.fields.zip || ""}
+              value={this.state.listingData.zip || ""}
             />
           </div>
           <div className="price-input">
@@ -138,7 +141,7 @@ class EditListingsForm extends Component {
               name="price"
               placeholder="price"
               onChange={this.handleChange}
-              value={this.state.fields.price || ""}
+              value={this.state.listingData.price || ""}
             />
 
             <div className="rental">
@@ -147,7 +150,7 @@ class EditListingsForm extends Component {
                 type="checkbox"
                 name="rental"
                 onChange={this.handleChange}
-                checked={this.state.fields.rental || ""}
+                checked={this.state.listingData.rental || ""}
               />
             </div>
           </div>
@@ -160,7 +163,7 @@ class EditListingsForm extends Component {
               name="size"
               placeholder="size"
               onChange={this.handleChange}
-              value={this.state.fields.size || false}
+              value={this.state.listingData.size || false}
             />
           </div>
           <div>
@@ -171,7 +174,7 @@ class EditListingsForm extends Component {
               name="bedrooms"
               placeholder="bedrooms"
               onChange={this.handleChange}
-              value={this.state.fields.bedrooms || ""}
+              value={this.state.listingData.bedrooms || ""}
             />
           </div>
           <div>
@@ -182,7 +185,7 @@ class EditListingsForm extends Component {
               name="neighborhood"
               placeholder="neighborhood"
               onChange={this.handleChange}
-              value={this.state.fields.neighborhood || ""}
+              value={this.state.listingData.neighborhood || ""}
             />
           </div>
           <div>
@@ -193,27 +196,28 @@ class EditListingsForm extends Component {
               name="description"
               placeholder="description"
               onChange={this.handleChange}
-              value={this.state.fields.description || ""}
+              value={this.state.listingData.description || ""}
             />
           </div>
           <input type="submit" className="submit" value="Save Listing" />
         </form>
         <form className="image-selection" onSubmit={this.handleFileUpload}>
-          <label htmlFor="img">Select image: </label>
-          <input
-            type="file"
-            id="img"
-            name="img"
-            accept="image/*"
-            ref={this.fileInput}
-          />
-          <input className="img-input" type="submit" />
+          <label htmlFor="img" className="submit">
+            {this.state.fileName}
+            <input
+              onChange={this.updateFileName}
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+              className="submit"
+              ref={this.fileInput}
+              />
+          </label>
+
+          <input className="submit" type="submit" value="Upload File" />
         </form>
-        <div className="listings-form-images">
-          {this.state.images.map((image, key) => (
-            <img src={image} alt=""/>
-          ))}
-        </div>
+        <Carousel images={this.state.images} />
       </div>
     );
   }
