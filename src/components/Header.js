@@ -1,35 +1,42 @@
 import React from "react";
-import {Link, Route} from 'react-router-dom';
-import About from "./About.js";
-import Home from "./Home.js";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div>
-      <nav>
+    <div className="header">
+        <div className="header-flex">
+      <img
+        className="isoprop-logo"
+        src="http://isoproperty.com/iso_images/iso_header_1.png"
+        alt="logo"
+      />
+      <img
+        className="logo-extension"
+        src="https://i.imgur.com/68PXtH6.png"
+        alt="logo extension"
+      />
+       </div>
+      <nav className="header-nav">
         <ul className="nav-list">
           <li className="header-link">
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <b>Home</b>
+            </Link>
           </li>
           <li className="header-link">
-            <Link to="/">Listings </Link>
+            <Link to="/listings">
+              <b>Listings</b>
+            </Link>
           </li>
           <li className="header-link">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="header-link">
-            <Link to="/contact">Contact</Link>
+            <Link to="/about">
+              <b>About</b>
+            </Link>
           </li>
         </ul>
-        <main>
-          <Route exact path="/" render={() => <Home />}></Route>
-          {/* <Route path="/listings" render={() => <Listings />}></Route> */}
-          <Route path="/about" render={() => <About />}></Route>
-          {/* <Route path="/cantact" render={() => <Contact />}></Route> */}
-        </main>
       </nav>
     </div>
   );
 }
 
-export default Header
+export default Header;
