@@ -3,10 +3,10 @@ import TinySlider from "tiny-slider-react";
 
 function Carousel(props) {
   const settings = {
+    items: 1,
     nav: true,
     mouseDrag: true,
     controls: true,
-    autoWidth: true,
     gutter: 10,
     center: true,
   };
