@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AdminHeader from './AdminHeader';
 
 class Admin extends Component {
   constructor(props) {
@@ -26,7 +25,6 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        <AdminHeader/>
         <form className="admin-login" onSubmit={this.loginSubmit}>
           <input
             className="email-input"

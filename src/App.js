@@ -12,7 +12,6 @@ import Home from "./components/Home.js";
 import Listings from "./components/Listings.js";
 import SingleListing from "./components/SingleListing.js";
 import EditListings from "./components/EditListings.js";
-import AdminHeader from "./components/AdminHeader";
 import EditAbout from "./components/EditAbout";
 import EditListingsForm from "./components/EditListingsForm";
 import EditAgents from "./components/EditAgents";
@@ -22,10 +21,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null,
-      user: "",
-      pass: "",
-      errorText: ""
+      currentUser: null
     };
   }
 
@@ -59,22 +55,28 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
-          <Header />
+          <Switch>
+            <Route path="/admin">
+              <Header />
+            </Route>
+            <Route path="/">
+              <Header />
+            </Route>
+          </Switch>
+
+
           <main>
             <Switch>
               <Route path="/admin">
-                <Admin handleLogin={this.handleLogin} />
+                <Admin user={this.state.currentUser} handleLogin={this.handleLogin} />
               </Route>
               <Route path="/edit-listings">
-                <AdminHeader />
                 <EditListings />
               </Route>
               <Route path="/edit-about">
-                <AdminHeader />
                 <EditAbout />
               </Route>
               <Route path="/edit-agents">
-                <AdminHeader />
                 <EditAgents />
               </Route>
               <Route exact path="/">
