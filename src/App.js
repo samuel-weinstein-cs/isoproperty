@@ -11,10 +11,7 @@ import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Listings from "./components/Listings.js";
 import SingleListing from "./components/SingleListing.js";
-import EditListings from "./components/EditListings.js";
-import EditAbout from "./components/EditAbout";
-import EditListingsForm from "./components/EditListingsForm";
-import EditAgents from "./components/EditAgents";
+
 
 class App extends Component {
   constructor(props) {
@@ -67,37 +64,35 @@ class App extends Component {
 
           <main>
             <Switch>
-              <Route path="/admin">
-                <Admin user={this.state.currentUser} handleLogin={this.handleLogin} />
-              </Route>
-              <Route path="/edit-listings">
-                <EditListings />
-              </Route>
-              <Route path="/edit-about">
-                <EditAbout />
-              </Route>
-              <Route path="/edit-agents">
-                <EditAgents />
-              </Route>
+
+              <Route
+                path="/admin"
+                render={(props) =>
+                  <Admin
+                    {...props}
+                    user={this.state.currentUser}
+                    handleLogin={this.handleLogin}
+                    />
+                }
+                />
+
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route
-                path="/listings/:id/edit"
-                render={props => (
-                  <EditListingsForm id={props.match.params.id} />
-                )}
-              />
+
               <Route
                 path="/listings/:id"
                 render={props => <SingleListing id={props.match.params.id} />}
               />
+
               <Route path="/listings">
                 <Listings />
               </Route>
+
               <Route path="/about">
                 <About />
               </Route>
+
             </Switch>
           </main>
         </div>
