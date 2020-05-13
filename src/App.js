@@ -54,10 +54,40 @@ class App extends Component {
         <div className="content">
           <Switch>
             <Route path="/admin">
-              <Header />
+              <Header
+                pages={[
+                  {
+                    url:"/admin",
+                    text:"Admin Home",
+                  },
+                  {
+                    url:"/admin/listings",
+                    text:"Listings",
+                  },
+                  {
+                    url:"/admin/about",
+                    text:"About",
+                  },
+                ]}
+                />
             </Route>
             <Route path="/">
-              <Header />
+              <Header
+                pages={[
+                  {
+                    url:"/",
+                    text:"Home",
+                  },
+                  {
+                    url:"/listings",
+                    text:"Listings",
+                  },
+                  {
+                    url:"/about",
+                    text:"About",
+                  },
+                ]}
+                />
             </Route>
           </Switch>
 
