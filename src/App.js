@@ -86,6 +86,16 @@ class App extends Component {
                     url:"/about",
                     text:"About",
                   },
+                  this.state.currentUser ?
+                  {
+                    url:"/admin",
+                    text:"Admin",
+                  } :
+                  {
+                    url: "/admin",
+                    text:"Log In",
+                  },
+
                 ]}
                 />
             </Route>
