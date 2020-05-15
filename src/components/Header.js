@@ -6,7 +6,7 @@ import headerImage from "../images/iso_header_combined_vectorized.svg"
 function Header(props) {
   return (
     <div className="header">
-      <Link to={props.pages?props.pages[0].url:"/"} style={{
+      <Link to="/" style={{
           outline:"none"
         }}>
         <img

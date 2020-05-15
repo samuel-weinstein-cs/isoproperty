@@ -33,7 +33,7 @@ class EditListings extends Component {
         </div>
         {this.state.listings.map((listing, index) => (
           <div className="listing" key={index}>
-            <Link to={`/listings/${listing.id}/edit`}>
+            <Link to={`/admin/listings/${listing.id}`}>
               <p className="listing-title">
                 <b>
                   {listing.address} {listing.address2} {listing.state}{" "}
