@@ -20,7 +20,7 @@ function Header(props) {
         <ul className="nav-list">
           {props.pages && props.pages.map((page,key)=>
             <li className="header-link" key={key}>
-              <Link to={page.url} onClick={props.onClick}>
+              <Link to={page.url} onClick={page.onClick}>
                 {page.text}
               </Link>
             </li>

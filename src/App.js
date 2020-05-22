@@ -33,11 +33,12 @@ class App extends Component {
     });
     localStorage.removeItem("authToken");
     localStorage.removeItem("name");
+    localStorage.removeItem("id");
   };
 
-  componentDidMount() {
-    verifyUser();
-    if (localStorage.getItem("authToken")) {
+  async componentDidMount () {
+
+    if (await verifyUser()) {
       const name = localStorage.getItem("name");
       const id = localStorage.getItem("id");
       const user = { name, id };
@@ -57,8 +58,8 @@ class App extends Component {
               <Header
                 pages={[
                   {
-                    url:"/admin",
-                    text:"Admin Home",
+                    url:"/admin/agents",
+                    text:"Agents",
                   },
                   {
                     url:"/admin/listings",
@@ -67,6 +68,11 @@ class App extends Component {
                   {
                     url:"/admin/about",
                     text:"About",
+                  },
+                  {
+                    url:"/",
+                    text: this.state.currentUser ? "Log out" : "Home",
+                    onClick: this.handleLogout
                   },
                 ]}
                 />

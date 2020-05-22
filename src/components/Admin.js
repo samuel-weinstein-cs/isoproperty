@@ -35,7 +35,29 @@ class Admin extends Component {
 
     return (
       <div>
-        {!this.props.user ? <form className="admin-login" onSubmit={this.loginSubmit}>
+        {this.props.user ?
+          <Switch>
+
+            <Route
+              path={`${match.path}/listings/:id`}
+              render={props => (
+                <EditListingsForm id={props.match.params.id} />
+              )}
+              />
+            <Route path={`${match.path}/listings/`}>
+              <EditListings />
+            </Route>
+            <Route path={`${match.path}/about/`}>
+              <EditAbout />
+            </Route>
+            <Route path={`${match.path}/agents/`}>
+              <EditAgents />
+            </Route>
+            <Route path={`${match.path}`}>
+              <p>Welcome, {this.props.user.name}</p>
+            </Route>
+          </Switch> :
+          <form className="admin-login" onSubmit={this.loginSubmit}>
           <input
             className="email-input"
             autoComplete="off"
@@ -59,24 +81,7 @@ class Admin extends Component {
           <br />
           <button className="submit">Login</button>
           <br />
-        </form> :
-        <Switch>
-          <Route
-            path={`${match.path}/listings/:id`}
-            render={props => (
-              <EditListingsForm id={props.match.params.id} />
-            )}
-            />
-          <Route path={`${match.path}/listings/`}>
-            <EditListings />
-          </Route>
-          <Route path={`${match.path}/about/`}>
-            <EditAbout />
-          </Route>
-          <Route path={`${match.path}/agents/`}>
-            <EditAgents />
-          </Route>
-        </Switch>
+        </form>
       }
       </div>
     );
