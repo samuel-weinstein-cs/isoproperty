@@ -1,29 +1,35 @@
 import React from "react";
-import TinySlider from "tiny-slider-react";
+import {default as MultiCarousel} from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function Carousel(props) {
-  const settings = {
-    items: 1,
-    nav: true,
-    mouseDrag: true,
-    controls: true,
-    gutter: 10,
-    center: true,
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
   };
-  console.log(props);
 
-  const loadingImage =
-    "data:image/gif;base64, R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==";
   return (
     <div>
-
       {(props.images && props.images.length > 0)&&
-        <TinySlider
-          settings={settings}
+        <MultiCarousel
+          responsive={responsive}
           className="single-listing-carousel"
           >
-
-
           {props.images.map((image, index) => (
             <div key={index} style={{ position: "relative" }}>
               <img
@@ -35,7 +41,7 @@ function Carousel(props) {
             </div>
           ))}
 
-        </TinySlider>}
+        </MultiCarousel>}
     </div>
   );
 }
