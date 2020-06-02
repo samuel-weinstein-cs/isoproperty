@@ -53,13 +53,14 @@ class EditListingsForm extends Component {
     await putListing(this.props.id, this.state.listingData);
   };
 
-  handleFileUpload = async () => {
+  handleFileUpload = async e => {
+    e.preventDefault();
     const id=this.props.id;
     const file=this.fileInput.current.files[0];
     if(file){
       const resp = await postImage(id,file);
       this.setState(prevState => ({
-        images:[...prevState.images, resp.image.url]
+        images:[ resp.image.url,...prevState.images]
       }))
     } else {
       alert("Please select a file!")
@@ -73,6 +74,8 @@ class EditListingsForm extends Component {
       })
     }
   }
+
+
 
   render() {
     return (
@@ -216,8 +219,9 @@ class EditListingsForm extends Component {
           </label>
 
           <input className="submit" type="submit" value="Upload File" />
+
         </form>
-        <Carousel images={this.state.images} />
+        <Carousel images={this.state.images}/>
       </div>
     );
   }
