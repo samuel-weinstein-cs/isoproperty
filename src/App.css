@@ -38,14 +38,17 @@
   font-size: 30px;
 }
 
-.header-link,
 a {
   text-decoration: none;
-  color: #009999;
 }
 
-.header-link,
-a:hover {
+.header-link a {
+  text-decoration: none;
+  color: #009999;
+  font-weight: bold;
+}
+
+.header-link a:hover {
   color: grey;
 }
 
