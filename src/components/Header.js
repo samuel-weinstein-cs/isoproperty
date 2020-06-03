@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import headerImage from "../images/iso_header_combined_vectorized.svg"
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <Link to="/" style={{
@@ -15,23 +15,16 @@ function Header() {
           alt="logo"
         />
       </Link>
+
       <nav className="header-nav">
         <ul className="nav-list">
-          <li className="header-link">
-            <Link to="/">
-              <b>Home</b>
-            </Link>
-          </li>
-          <li className="header-link">
-            <Link to="/listings">
-              <b>Listings</b>
-            </Link>
-          </li>
-          <li className="header-link">
-            <Link to="/about">
-              <b>About</b>
-            </Link>
-          </li>
+          {props.pages && props.pages.map((page,key)=>
+            <li className="header-link" key={key}>
+              <Link to={page.url} onClick={page.onClick}>
+                {page.text}
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </div>

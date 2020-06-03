@@ -53,12 +53,23 @@ export const loginUser = async (loginData) => {
   localStorage.setItem('authToken', resp.data.token);
   localStorage.setItem('name', resp.data.agent.name);
   localStorage.setItem('id', resp.data.agent.id )
-  return resp.data.user;
+  return resp.data.agent;
 }
 
-export const verifyUser = () => {
+export const verifyUser = async () => {
   const token = localStorage.getItem('authToken');
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
+    try {
+      const resp = await api.get('/agents/verify');
+      console.log(resp);
+      return resp.data;
+    } catch(e) {
+      // console.error(e)
+      api.defaults.headers.common.authorization = null;
+      localStorage.removeItem('authToken');
+    }
+
+    return null;
   }
 }
