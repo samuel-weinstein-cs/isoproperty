@@ -1,10 +1,13 @@
 import React from "react";
+import {getAbout} from "../services/api_helper"
 
-function About(props) {
+
+async function About() {
+  const aboutData = await getAbout();
     return (
       <div className="about">
         <h1 className="about-header">About our company</h1>
-        <p className="about-p">{}</p>
+        <p className="about-p">{aboutData.text}</p>
         <h1 className="agents-header">Our Agents</h1>
         <div className="agents">
           <img
