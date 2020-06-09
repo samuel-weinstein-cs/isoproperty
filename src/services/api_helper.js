@@ -25,7 +25,7 @@ export const putListing = async (id, listingData) => {
 
 export const getAbout = async () => {
   const resp = await api.get(`/about`);
-  return resp;
+  return resp.data.text;
 }
 
 export const postImage = async (listingId, file) => {
