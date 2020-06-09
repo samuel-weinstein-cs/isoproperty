@@ -23,6 +23,11 @@ export const putListing = async (id, listingData) => {
   return resp;
 }
 
+export const getAbout = async () => {
+  const resp = await api.get(`/about`);
+  return resp;
+}
+
 export const postImage = async (listingId, file) => {
   const fileParts = file.name.split('.');
   const signedResponse = await api.post(`/listings/${listingId}/image/`, {
