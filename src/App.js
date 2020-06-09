@@ -19,7 +19,6 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      editAbout: "",
       agentName: "",
       agentEmail: "",
       agentAbout: "",
@@ -43,22 +42,6 @@ class App extends Component {
     localStorage.removeItem("id");
   };
 
-  handleAbout = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-    console.log(this.state.editAbout);
-  };
-
-  submitAbout = (e) => {
-    e.preventDefault();
-    let newAbout = this.state.editAbout;
-    this.setState({
-      newAbout,
-    });
-    console.log("success")
-  };
 
   submitAgentName = (e) => {
     e.preventDefault();
@@ -224,7 +207,7 @@ class App extends Component {
               </Route>
 
               <Route path="/about">
-                <About editAbout={this.state.editAbout}/>
+                <About editAbout={this.props.editAbout}/>
               </Route>
 
             </Switch>

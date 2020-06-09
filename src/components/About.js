@@ -4,7 +4,7 @@ function About(props) {
     return (
       <div className="about">
         <h1 className="about-header">About our company</h1>
-        <p className="about-p">{props.editAbout}</p>
+        <p className="about-p">{}</p>
         <h1 className="agents-header">Our Agents</h1>
         <div className="agents">
           <img

@@ -26,7 +26,7 @@ class Listings extends Component {
           <h2 className="sales">Sales</h2>
           <p className="click-img">
             <i>
-              Click the address or thumbnail photo below <br /> to see more
+              Click the address or thumbnail photo below to see more
               property details
             </i>
           </p>
