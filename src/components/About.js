@@ -1,13 +1,28 @@
-import React from "react";
+import React, {Component} from "react";
 import {getAbout} from "../services/api_helper"
 
 
-async function About() {
+class About extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      aboutData: ""
+    }
+  }
+
+  componentDidMount = async () => {
   const aboutData = await getAbout();
+  this.setState({
+    aboutData
+  });
+  }
+
+  render() {
     return (
       <div className="about">
         <h1 className="about-header">About our company</h1>
-        <p className="about-p">{aboutData.text}</p>
+        <p className="about-p">{this.state.aboutData}</p>
         <h1 className="agents-header">Our Agents</h1>
         <div className="agents">
           <img
@@ -34,5 +49,6 @@ async function About() {
       </div>
     );
   }
+}
 
 export default About;
