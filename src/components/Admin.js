@@ -11,17 +11,17 @@ class Admin extends Component {
     super(props);
 
     this.state = {
-      email:"",
-      password:""
+      email: "",
+      password: "",
     };
   }
 
   handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     this.setState({
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   loginSubmit = async (e) => {
     e.preventDefault();
@@ -29,60 +29,74 @@ class Admin extends Component {
   };
 
   render() {
-
     const { match } = this.props;
     console.log(match);
 
     return (
       <div>
-        {this.props.user ?
+        {this.props.user ? (
           <Switch>
-
             <Route
               path={`${match.path}/listings/:id`}
-              render={props => (
+              render={(props) => (
                 <EditListingsForm id={props.match.params.id} />
               )}
-              />
+            />
             <Route path={`${match.path}/listings/`}>
               <EditListings />
             </Route>
             <Route path={`${match.path}/about/`}>
-              <EditAbout />
+              <EditAbout editAbout={this.props.editAbout}
+              handleAbout={this.props.handleAbout}
+              submitAbout={this.props.submitAbout}/>
             </Route>
             <Route path={`${match.path}/agents/`}>
-              <EditAgents />
+              <EditAgents
+              agentName={this.props.agentName}
+              agentEmail={this.props.agentEmail}
+              agentAbout={this.props.agentAbout}
+              agentImage={this.props.agentImage}
+              agentPhone={this.props.agentPhone}
+              agentMobile={this.props.agentMobile}
+              submitAgentName={this.props.submitAgentName}
+              submitAgentEmail={this.props.submitAgentEmail}
+              submitAgentAbout={this.props.submitAgentAbout}
+              submitAgentImage={this.props.submitAgentImage}
+              submitAgentPhone={this.props.submitAgentPhone}
+              submitAgentMobile={this.props.submitAgentMobile}
+              />
             </Route>
             <Route path={`${match.path}`}>
               <p>Welcome, {this.props.user.name}</p>
             </Route>
-          </Switch> :
+          </Switch>
+        ) : (
           <form className="admin-login" onSubmit={this.loginSubmit}>
-          <input
-            className="email-input"
-            autoComplete="off"
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label htmlFor="password"></label>
-          <input
-            className="password-input"
-            autoComplete="off"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <br />
-          <button className="submit">Login</button>
-          <br />
-        </form>
-      }
+            <input
+              className="email-input"
+              autoComplete="off"
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+            <br />
+            <label htmlFor="password"></label>
+            <input
+              className="password-input"
+              autoComplete="off"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+            <br />
+            <button className="submit">Login</button>
+            <br />
+          </form>
+        )}
       </div>
     );
   }

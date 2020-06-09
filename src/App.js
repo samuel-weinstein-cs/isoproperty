@@ -18,7 +18,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      editAbout: "",
+      agentName: "",
+      agentEmail: "",
+      agentAbout: "",
+      agentImage: "",
+      agentPhone: "",
+      agentMobile: ""
     };
   }
 
@@ -35,6 +42,72 @@ class App extends Component {
     localStorage.removeItem("name");
     localStorage.removeItem("id");
   };
+
+  handleAbout = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+    console.log(this.state.editAbout);
+  };
+
+  submitAbout = (e) => {
+    e.preventDefault();
+    let newAbout = this.state.editAbout;
+    this.setState({
+      newAbout,
+    });
+    console.log("success")
+  };
+
+  submitAgentName = (e) => {
+    e.preventDefault();
+    let newAgentName = this.state.agentName;
+    this.setState({
+      newAgentName
+    })
+  }
+
+  submitAgentEmail = (e) => {
+    e.preventDefault();
+    let newAgentEmail = this.state.agentEmail;
+    this.setState({
+      newAgentEmail
+    })
+  }
+
+  submitAgentAbout = (e) => {
+    e.preventDefault();
+    let newAgentAbout = this.state.agentAbout;
+    this.setState({
+      newAgentAbout
+    })
+  }
+
+  submitAgentImage = (e) => {
+    e.preventDefault();
+    let newAgentImage = this.state.agentImage;
+    this.setState({
+      newAgentImage
+    })
+  }
+
+  submitAgentPhone = (e) => {
+    e.preventDefault();
+    let newAgentPhone = this.state.agentPhone;
+    this.setState({
+      newAgentPhone
+    })
+  }
+
+  submitAgentMobile = (e) => {
+    e.preventDefault();
+    let newAgentMobile = this.state.agentMobile;
+    this.setState({
+      newAgentMobile
+    })
+  }
+
 
   async componentDidMount () {
 
@@ -118,6 +191,21 @@ class App extends Component {
                     {...props}
                     user={this.state.currentUser}
                     handleLogin={this.handleLogin}
+                    editAbout={this.state.editAbout}
+                    handleAbout={this.handleAbout}
+                    submitAbout={this.submitAbout}
+                    agentName={this.state.agentName}
+                    agentEmail={this.state.agentEmail}
+                    agentAbout={this.state.agentAbout}
+                    agentImage={this.state.agentImage}
+                    agentPhone={this.state.agentPhone}
+                    agentMobile={this.state.agentMobile}
+                    submitAgentName={this.submitAgentName}
+                    submitAgentEmail={this.submitAgentEmail}
+                    submitAgentAbout={this.submitAgentAbout}
+                    submitAgentImage={this.submitAgentImage}
+                    submitAgentPhone={this.submitAgentPhone}
+                    submitAgentMobile={this.submitAgentMobile}
                     />
                 }
                 />
@@ -136,7 +224,7 @@ class App extends Component {
               </Route>
 
               <Route path="/about">
-                <About />
+                <About editAbout={this.state.editAbout}/>
               </Route>
 
             </Switch>
