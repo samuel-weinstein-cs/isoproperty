@@ -231,6 +231,14 @@ h2.sales {
   bottom: 30px;
 }
 
+.edit-address-img {
+  height: 200px;
+  width: 250px;
+  position: relative;
+  left: 228%;
+  bottom: 30px;
+}
+
 .prop-details {
   margin-top: 50px;
   text-align: center;
@@ -339,8 +347,20 @@ h2.sales {
   margin-left: 20%;
 }
 
+.agent-text-area {
+  margin-bottom: 10px;
+}
+
 .edit-single-listing {
   margin-top: 10%;
+}
+
+.phone {
+  margin-top: 10px;
+}
+
+.mobile {
+  margin-top: 10px;
 }
 
 .input-flex {

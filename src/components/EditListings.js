@@ -26,7 +26,7 @@ class EditListings extends Component {
           <h2 className="sales">Sales</h2>
           <p className="click-img">
             <i>
-              Click the address or thumbnail photo below <br /> to edit property
+              Click the address or thumbnail photo below to edit property
               details
             </i>
           </p>
