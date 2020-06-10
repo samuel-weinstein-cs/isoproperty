@@ -39,16 +39,13 @@ class EditAgents extends Component {
         <form onSubmit={() => {this.props.submitAgentName(); this.props.submitAgentEmail();}}>
           <div className="agent-name-email">
             <p>
-              Name:
               <input type="text" name="name" placeholder="name" />
             </p>
             <p>
-              <span>Email: </span>
               <input type="text" name="email" placeholder="email" />
             </p>
           </div>
         <div className="agent-img-info">
-          <div className="edit-agent-img"></div>
           <textarea
             className="agent-text-area"
             type="text"
@@ -70,9 +67,9 @@ class EditAgents extends Component {
             />
           </label>
           <br/>
-          <input type="text" name="phone" placeholder="phone" />
+          <input className="phone" type="text" name="phone" placeholder="phone" />
           <br />
-          <input type="text" name="mobile" placeholder="mobile" />
+          <input className="mobile" type="text" name="mobile" placeholder="mobile" />
           <br/>
           <input className="submit" type="submit" value="Upload Agent" />
         </form>
