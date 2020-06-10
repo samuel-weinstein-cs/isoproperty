@@ -28,6 +28,13 @@ export const getAbout = async () => {
   return resp.data.text;
 }
 
+export const putAbout = async (text) => {
+  const resp = await api.put(`/about`, {
+    text
+  });
+  return resp.data.text;
+}
+
 export const postImage = async (listingId, file) => {
   const fileParts = file.name.split('.');
   const signedResponse = await api.post(`/listings/${listingId}/image/`, {
