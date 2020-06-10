@@ -28,6 +28,8 @@ function Carousel(props) {
       {(props.images && props.images.length > 0)&&
         <MultiCarousel
           responsive={responsive}
+          infinite={true}
+          keyBoardControl={true}
           className="single-listing-carousel"
           >
           {props.images.map((image, index) => (
