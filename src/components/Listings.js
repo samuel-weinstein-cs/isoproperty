@@ -21,7 +21,7 @@ class Listings extends Component {
   render() {
     return (
       <div className="listings">
-        <h1>Listings</h1>
+        <h1 className="listing-header">Listings</h1>
         <div className="header-flex">
           <h2 className="sales">Sales</h2>
           <p className="click-img">

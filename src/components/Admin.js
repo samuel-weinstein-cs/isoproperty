@@ -30,12 +30,14 @@ class Admin extends Component {
 
   render() {
     const { match } = this.props;
-    console.log(match);
 
     return (
       <div>
         {this.props.user ? (
           <Switch>
+            <Route path={`${match.path}/listings/new`}>
+              <EditListingsForm/>
+            </Route>
             <Route
               path={`${match.path}/listings/:id`}
               render={(props) => (
@@ -71,6 +73,8 @@ class Admin extends Component {
             </Route>
           </Switch>
         ) : (
+          <div>
+            <h1 className="login-header">Login</h1>
           <form className="admin-login" onSubmit={this.loginSubmit}>
             <input
               className="email-input"
@@ -96,6 +100,7 @@ class Admin extends Component {
             <button className="submit">Login</button>
             <br />
           </form>
+          </div>
         )}
       </div>
     );

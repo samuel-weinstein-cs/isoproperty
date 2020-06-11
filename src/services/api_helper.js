@@ -28,13 +28,19 @@ export const getAbout = async () => {
   return resp.data.text;
 }
 
+export const putAbout = async (text) => {
+  const resp = await api.put(`/about`, {
+    text
+  });
+  return resp.data.text;
+}
+
 export const postImage = async (listingId, file) => {
   const fileParts = file.name.split('.');
   const signedResponse = await api.post(`/listings/${listingId}/image/`, {
     fileName:fileParts[0],
     fileType:fileParts[1]
   })
-  console.log(signedResponse);
 
   const options={
     headers: {
@@ -42,7 +48,6 @@ export const postImage = async (listingId, file) => {
     }
   }
   await axios.put(signedResponse.data.request, file, options);
-  console.log("File Uploaded");
   return signedResponse.data;
 }
 
@@ -53,7 +58,6 @@ export const getListingImages = async (listingId) => {
 
 export const loginUser = async (loginData) => {
   const resp = await api.post('/agents/login', loginData);
-  console.log(resp);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
   localStorage.setItem('authToken', resp.data.token);
   localStorage.setItem('name', resp.data.agent.name);
@@ -67,10 +71,8 @@ export const verifyUser = async () => {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
     try {
       const resp = await api.get('/agents/verify');
-      console.log(resp);
       return resp.data;
     } catch(e) {
-      // console.error(e)
       api.defaults.headers.common.authorization = null;
       localStorage.removeItem('authToken');
     }

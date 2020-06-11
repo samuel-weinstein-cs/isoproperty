@@ -35,7 +35,7 @@ class EditAgents extends Component {
   render() {
     return (
       <div>
-        <h1>Edit Agents</h1>
+        <h1 className="edit-agents">Edit Agents</h1>
         <form onSubmit={() => {this.props.submitAgentName(); this.props.submitAgentEmail();}}>
           <div className="agent-name-email">
             <p>

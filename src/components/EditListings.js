@@ -21,14 +21,13 @@ class EditListings extends Component {
   render() {
     return (
       <div className="listings">
-        <h1>Edit Listings</h1>
+        <h1 className="edit-listings">Edit Listings</h1>
         <div className="header-flex">
           <h2 className="sales">Sales</h2>
           <p className="click-img">
-            <i>
-              Click the address or thumbnail photo below to edit property
-              details
-            </i>
+            <Link to="/admin/listings/new" className="new-listing">
+              Click here to create a new listing
+            </Link>
           </p>
         </div>
         {this.state.listings.map((listing, index) => (
@@ -65,7 +64,7 @@ class EditListings extends Component {
                 </p>
               </div>
               <div className="edit-image">
-                <Link to={`/listings/${listing.id}/edit`}>
+                <Link to={`/admin/listings/${listing.id}`}>
                   <img
                     className="edit-address-img"
                     src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
