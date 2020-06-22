@@ -4,10 +4,15 @@ const api = axios.create({
     baseURL: "http://localhost:3001/"
 })
 
+export const getAgents = async () => {
+  const resp = await api.get('/agents');
+  return resp.data.agents;
+}
+
 export const getListings = async () => {
-    const resp = await api.get('/listings');
-    return resp.data.listings;
-  }
+  const resp = await api.get('/listings');
+  return resp.data.listings;
+}
 
 export const getSingleListing = async (id) => {
   const resp = await api.get(`/listings/${id}`)
