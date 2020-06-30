@@ -1,22 +1,23 @@
-import React, {Component} from "react";
-import {getAbout} from "../services/api_helper"
-
+import React, { Component } from "react";
+import { getAbout, getAgents } from "../services/api_helper";
 
 class About extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      aboutData: ""
-    }
+      aboutData: "",
+      agentData: [],
+    };
   }
 
   componentDidMount = async () => {
-  const aboutData = await getAbout();
-  this.setState({
-    aboutData
-  });
-  }
+    const [aboutData, agentData] = await Promise.all([getAbout(), getAgents()]);
+    this.setState({
+      aboutData,
+      agentData,
+    });
+  };
 
   render() {
     return (
@@ -30,21 +31,27 @@ class About extends Component {
             src="https://frugalfrolicker.com/wp-content/uploads/2014/06/top-of-the-rock-1.jpg"
             alt="address"
           />
-          <div className="agent-info">
-            <p>
-              <b>Name:</b>Isaac Oserin
-            </p>
-            <p>
-              <b>Email:</b>
-              <span className="agent-email">isaac@isoproperty.com</span>
-            </p>
-            <p>
-              <b>Phone: 212-252-2704</b>
-            </p>
-            <p>
-              <b>Mobile: 917-733-6686</b>
-            </p>
-          </div>
+          {this.state.agentData.map((agent, index) => (
+            <div className="agent-info" key={index}>
+              <p>
+                <b>Name:</b>
+                {agent.name}
+              </p>
+              <p>
+                <b>Email:</b>
+                {agent.email}
+              </p>
+              <p>
+                <b>Phone: {agent.phone}</b>
+              </p>
+              <p>
+                <b>Mobile: {agent.mobile}</b>
+              </p>
+              <p className="agent-desc">
+                <b>Description:</b> {agent.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     );

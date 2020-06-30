@@ -7,8 +7,63 @@ class EditAgents extends Component {
 
     this.fileInput = React.createRef();
     this.state = {
-      fileName: "Select Image"
+      fileName: "Select Image",
+      agentName: "",
+      agentEmail: "",
+      agentDesc: "",
+      agentImage: "",
+      agentPhone: "",
+      agentMobile: ""
     };
+  }
+
+  submitAgentName = (e) => {
+    e.preventDefault();
+    let newAgentName = this.state.agentName;
+    this.setState({
+      newAgentName
+    })
+  }
+
+  submitAgentEmail = (e) => {
+    e.preventDefault();
+    let newAgentEmail = this.state.agentEmail;
+    this.setState({
+      newAgentEmail
+    })
+    console.log("sent")
+  }
+
+  submitAgentDesc = (e) => {
+    e.preventDefault();
+    let newAgentDesc = this.state.agentAbout;
+    this.setState({
+      newAgentDesc
+    })
+  }
+
+  submitAgentImage = (e) => {
+    e.preventDefault();
+    let newAgentImage = this.state.agentImage;
+    this.setState({
+      newAgentImage
+    })
+  }
+
+  submitAgentPhone = (e) => {
+    e.preventDefault();
+    let newAgentPhone = this.state.agentPhone;
+    this.setState({
+      newAgentPhone
+    })
+  }
+
+  submitAgentMobile = (e) => {
+    e.preventDefault();
+    let newAgentMobile = this.state.agentMobile;
+    this.setState({
+      newAgentMobile
+    })
   }
 
   handleFileUpload = async () => {
@@ -30,13 +85,13 @@ class EditAgents extends Component {
         fileName: this.fileInput.current.files[0].name,
       })
     }
-  }  
+  }
 
   render() {
     return (
       <div>
         <h1 className="edit-agents">Edit Agents</h1>
-        <form onSubmit={() => {this.props.submitAgentName(); this.props.submitAgentEmail();}}>
+        <form onSubmit={this.submitAgentName}>
           <div className="agent-name-email">
             <p>
               <input type="text" name="name" placeholder="name" />

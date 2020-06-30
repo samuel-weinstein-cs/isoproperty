@@ -19,12 +19,6 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      agentName: "",
-      agentEmail: "",
-      agentAbout: "",
-      agentImage: "",
-      agentPhone: "",
-      agentMobile: ""
     };
   }
 
@@ -41,55 +35,6 @@ class App extends Component {
     localStorage.removeItem("name");
     localStorage.removeItem("id");
   };
-
-
-  submitAgentName = (e) => {
-    e.preventDefault();
-    let newAgentName = this.state.agentName;
-    this.setState({
-      newAgentName
-    })
-  }
-
-  submitAgentEmail = (e) => {
-    e.preventDefault();
-    let newAgentEmail = this.state.agentEmail;
-    this.setState({
-      newAgentEmail
-    })
-  }
-
-  submitAgentAbout = (e) => {
-    e.preventDefault();
-    let newAgentAbout = this.state.agentAbout;
-    this.setState({
-      newAgentAbout
-    })
-  }
-
-  submitAgentImage = (e) => {
-    e.preventDefault();
-    let newAgentImage = this.state.agentImage;
-    this.setState({
-      newAgentImage
-    })
-  }
-
-  submitAgentPhone = (e) => {
-    e.preventDefault();
-    let newAgentPhone = this.state.agentPhone;
-    this.setState({
-      newAgentPhone
-    })
-  }
-
-  submitAgentMobile = (e) => {
-    e.preventDefault();
-    let newAgentMobile = this.state.agentMobile;
-    this.setState({
-      newAgentMobile
-    })
-  }
 
 
   async componentDidMount () {
@@ -177,18 +122,6 @@ class App extends Component {
                     editAbout={this.state.editAbout}
                     handleAbout={this.handleAbout}
                     submitAbout={this.submitAbout}
-                    agentName={this.state.agentName}
-                    agentEmail={this.state.agentEmail}
-                    agentAbout={this.state.agentAbout}
-                    agentImage={this.state.agentImage}
-                    agentPhone={this.state.agentPhone}
-                    agentMobile={this.state.agentMobile}
-                    submitAgentName={this.submitAgentName}
-                    submitAgentEmail={this.submitAgentEmail}
-                    submitAgentAbout={this.submitAgentAbout}
-                    submitAgentImage={this.submitAgentImage}
-                    submitAgentPhone={this.submitAgentPhone}
-                    submitAgentMobile={this.submitAgentMobile}
                     />
                 }
                 />

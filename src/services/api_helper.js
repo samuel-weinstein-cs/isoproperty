@@ -9,6 +9,7 @@ export const getAgents = async () => {
   return resp.data.agents;
 }
 
+
 export const getListings = async () => {
   const resp = await api.get('/listings');
   return resp.data.listings;
