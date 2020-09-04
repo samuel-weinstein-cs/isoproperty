@@ -9,13 +9,23 @@ export const getAgents = async () => {
   return resp.data.agents;
 }
 
+export const postAgent = async (agentData) => {
+  const resp = await api.post('/agents');
+  return resp.data;
+}
+
+export const putAgent = async (id,agentData) => {
+  const resp = await api.put(`/agents/${id}`);
+  return resp.data;
+}
+
 export const getListings = async () => {
   const resp = await api.get('/listings');
   return resp.data.listings;
 }
 
 export const getSingleListing = async (id) => {
-  const resp = await api.get(`/listings/${id}`)
+  const resp = await api.get(`/listings/${id}`);
   return resp.data;
 }
 

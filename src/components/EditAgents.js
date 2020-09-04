@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {postImage} from "../services/api_helper";
+import {getAgents} from "../services/api_helper.js"
 
 class EditAgents extends Component {
   constructor(props) {
@@ -7,72 +7,46 @@ class EditAgents extends Component {
 
     this.fileInput = React.createRef();
     this.state = {
-      fileName: "Select Image"
+      agents: []
     };
   }
 
-  handleFileUpload = async () => {
-    const id=this.props.id;
-    const file=this.fileInput.current.files[0];
-    if(file){
-      const resp = await postImage(id,file);
-      this.setState(prevState => ({
-        images:[...prevState.images, resp.image.url]
-      }))
-    } else {
-      alert("Please select a file!")
-    }
+  async componentDidMount(){
+    const agents = await getAgents();
+    this.setState({
+      agents
+    })
   }
-
-  updateFileName = e => {
-    if(this.fileInput.current && this.fileInput.current.files.length>0) {
-      this.setState({
-        fileName: this.fileInput.current.files[0].name,
-      })
-    }
-  }  
 
   render() {
     return (
       <div>
         <h1>Edit Agents</h1>
-        <form onSubmit={() => {this.props.submitAgentName(); this.props.submitAgentEmail();}}>
-          <div className="agent-name-email">
-            <p>
-              <input type="text" name="name" placeholder="name" />
-            </p>
-            <p>
-              <input type="text" name="email" placeholder="email" />
-            </p>
-          </div>
-        <div className="agent-img-info">
-          <textarea
-            className="agent-text-area"
-            type="text"
-            name="about-agent"
-            placeholder="About You"
-          ></textarea>
-        </div>
-          <label htmlFor="img" className="submit">
-            {this.state.fileName}
-            <input
-              action="/action_page.php"
-              onChange={this.updateFileName}
-              type="file"
-              id="img"
-              name="img"
-              accept="image/*"
-              className="submit"
-              ref={this.fileInput}
-            />
-          </label>
-          <br/>
-          <input className="phone" type="text" name="phone" placeholder="phone" />
-          <br />
-          <input className="mobile" type="text" name="mobile" placeholder="mobile" />
-          <br/>
-          <input className="submit" type="submit" value="Upload Agent" />
-        </form>
+        <table>
+          <tbody>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Mobile</th>
+            </tr>
+            {this.state.agents.map((agent, key) => {
+              console.log(agent);
+              const {name, description, email, phone, mobile} = agent;
+              return (
+                <tr key={key}>
+                  <td><input type="text" value={name} /></td>
+                  <td><textarea value={description} /></td>
+                  <td><input type="email" value={email} /></td>
+                  <td>{phone}</td>
+                  <td>{mobile}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+
+        </table>
       </div>
     );
   }

@@ -46,25 +46,10 @@ class Admin extends Component {
               <EditListings />
             </Route>
             <Route path={`${match.path}/about/`}>
-              <EditAbout editAbout={this.props.editAbout}
-              handleAbout={this.props.handleAbout}
-              submitAbout={this.props.submitAbout}/>
+              <EditAbout editAbout={this.props.editAbout}/>
             </Route>
             <Route path={`${match.path}/agents/`}>
-              <EditAgents
-              agentName={this.props.agentName}
-              agentEmail={this.props.agentEmail}
-              agentAbout={this.props.agentAbout}
-              agentImage={this.props.agentImage}
-              agentPhone={this.props.agentPhone}
-              agentMobile={this.props.agentMobile}
-              submitAgentName={this.props.submitAgentName}
-              submitAgentEmail={this.props.submitAgentEmail}
-              submitAgentAbout={this.props.submitAgentAbout}
-              submitAgentImage={this.props.submitAgentImage}
-              submitAgentPhone={this.props.submitAgentPhone}
-              submitAgentMobile={this.props.submitAgentMobile}
-              />
+              <EditAgents/>
             </Route>
             <Route path={`${match.path}`}>
               <p>Welcome, {this.props.user.name}</p>
